@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity-loop cycle 2 (2026-10-14 ~16:25 EDT) completed. Snapshot: 147/193 agents idle (76.2%). 3 assignments issued (streamer-clip-farm Viral Clip Scout, whatsapp-shop-ops Drop Picker, research-desk Research Strategist), 3/3 proposals delivered as files with evidence and risks — PROPOSAL ONLY, no auto-apply. Cycle log: ~/workspace/productivity-team/cycle-log/2026-10-14-1625.md; QC receipt: ~/workspace/productivity-team/qc-log/2026-10-14-cycle2.md (PASS). Not converged. No failed reads, no idle-work conflicts, no spending/accounts/posting.",
+      "preview": "Productivity-loop cycle 2 (2026-10-14 ~16:25 EDT) completed. Snapshot: 147/193 agents idle (76.2%).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,7 +12,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792009807000,
-      "lastActivityAt": 1792009823000,
+      "lastActivityAt": 1792011423000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -30,7 +30,7 @@
       "agent_id": "productivity-team-productivity-agent-lead",
       "agent_role": "Productivity Agent (Lead)",
       "tile_index": 0,
-      "sizeBytes": 3500,
+      "sizeBytes": 5000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity-loop cycle 2 (2026-10-14 ~16:25 EDT) completed. Snapshot: 147/193 agents idle (76.2%). 3 assignments issued (streamer-clip-farm Viral Clip Scout, whatsapp-shop-ops Drop Picker, research-desk Research Strategist), 3/3 proposals delivered as files with evidence and risks — PROPOSAL ONLY, no auto-apply. Cycle log: ~/workspace/productivity-team/cycle-log/2026-10-14-1625.md; QC receipt: ~/workspace/productivity-team/qc-log/2026-10-14-cycle2.md (PASS). Not converged. No failed reads, no idle-work conflicts, no spending/accounts/posting.",
+      "preview": "Productivity-loop cycle 2 (2026-10-14 ~16:25 EDT) completed. Snapshot: 147/193 agents idle (76.2%).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,7 +49,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792009807000,
-      "lastActivityAt": 1792009823000,
+      "lastActivityAt": 1792011423000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -67,7 +67,7 @@
       "agent_id": "productivity-team-task-assigner",
       "agent_role": "Task Assigner",
       "tile_index": 1,
-      "sizeBytes": 3500,
+      "sizeBytes": 5000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity-loop cycle 2 (2026-10-14 ~16:25 EDT) completed. Snapshot: 147/193 agents idle (76.2%). 3 assignments issued (streamer-clip-farm Viral Clip Scout, whatsapp-shop-ops Drop Picker, research-desk Research Strategist), 3/3 proposals delivered as files with evidence and risks — PROPOSAL ONLY, no auto-apply. Cycle log: ~/workspace/productivity-team/cycle-log/2026-10-14-1625.md; QC receipt: ~/workspace/productivity-team/qc-log/2026-10-14-cycle2.md (PASS). Not converged. No failed reads, no idle-work conflicts, no spending/accounts/posting.",
+      "preview": "Productivity-loop cycle 2 (2026-10-14 ~16:25 EDT) completed. Snapshot: 147/193 agents idle (76.2%).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,7 +86,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792009807000,
-      "lastActivityAt": 1792009823000,
+      "lastActivityAt": 1792011423000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -104,7 +104,7 @@
       "agent_id": "productivity-team-efficiency-auditor",
       "agent_role": "Efficiency Auditor",
       "tile_index": 2,
-      "sizeBytes": 3500,
+      "sizeBytes": 5000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity-loop cycle 2 (2026-10-14 ~16:25 EDT) completed. Snapshot: 147/193 agents idle (76.2%). 3 assignments issued (streamer-clip-farm Viral Clip Scout, whatsapp-shop-ops Drop Picker, research-desk Research Strategist), 3/3 proposals delivered as files with evidence and risks — PROPOSAL ONLY, no auto-apply. Cycle log: ~/workspace/productivity-team/cycle-log/2026-10-14-1625.md; QC receipt: ~/workspace/productivity-team/qc-log/2026-10-14-cycle2.md (PASS). Not converged. No failed reads, no idle-work conflicts, no spending/accounts/posting.",
+      "preview": "Productivity-loop cycle 2 (2026-10-14 ~16:25 EDT) completed. Snapshot: 147/193 agents idle (76.2%).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,7 +123,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792009807000,
-      "lastActivityAt": 1792009823000,
+      "lastActivityAt": 1792011423000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -141,7 +141,7 @@
       "agent_id": "productivity-team-qc-agent",
       "agent_role": "QC agent",
       "tile_index": 3,
-      "sizeBytes": 3500,
+      "sizeBytes": 5000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792011398518,
+  "scannedAt": 1792011545358,
   "warnings": []
 }
