@@ -4,14 +4,14 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT.\n\nProduct: Bedside Clock (rotation slot #26, BUILD 06), about $22. Verified against live gadget-builds page (https://icyunvbankai.github.io/Bitstream/gadget-builds.html): color TFT clock; time, weather, overnight Muse alerts; sleeps 11pm–6am; wakes on motion when Build 05's PIR is added (the PIR is an add-on, not included).\n\nDeliverables:\n- Creative: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-14-16.jpg (1:1 feed ad, \"THE CLOCK THAT WORKS THE NIGHT SHIFT\", ABOUT $22 badge, BUILD 06 label)\n- Caption: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-14-16.txt (hook-first copy with price + buy link, ends with \"Follow @glitchmobz_clips for daily drops ⚡\")\n\nStatus — do not post manually yet: this creative was NOT auto-posted and is not \"in the auto-post queue,\" but it has NOT yet been delivered to the main chat as of this draft, and two conflicts need resolving before posting: (1) the run's memory entry flags this file as the alternating poster's ad-hour source and says manual posting would duplicate it; (2) Adrian's same-day answer was that gadget-build ads stay blocked until a real photo of a built unit exists, and this creative is an AI render, not a photo of a built clock. Needs Adrian / poster-owner decision before posting.\n\nQualification on the creative: the image's on-screen humidity/forecast values are illustrative AI-render details, not verified specs from the gadget-builds page; the caption does not repeat them.\n\nRotation.json advanced to pos 86 (next: Air Node, about $25). Memory log appended ~/memory/2026-10-14.md. Goal timeline entry on goal_6627da56580b was reported created by the producing run; verification could not independently re-read the goal timeline, so treat that as reported, not independently confirmed.\n\nNote: a separate 3-hook test for Bedside Clock exists in ~/workspace/ads-daily/hook-test-2026-10-14/ (marked TEST ROW/NOT posted, rotation untouched by that test) — this run prepared the single hourly creative per body, distinct from the test variants. The test's 16:04 EDT generation time was not independently verified in the verification run.",
+      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1791935392000,
+      "createdAt": 1791937545000,
       "lastActivityAt": 1792011195000,
       "lastFocusedAt": 0,
       "running": false,
@@ -30,7 +30,7 @@
       "agent_id": "stack-streamer-clip-farm-viral-clip-scout",
       "agent_role": "Viral clip scout",
       "tile_index": 0,
-      "sizeBytes": 68000,
+      "sizeBytes": 66500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -41,14 +41,14 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT.\n\nProduct: Bedside Clock (rotation slot #26, BUILD 06), about $22. Verified against live gadget-builds page (https://icyunvbankai.github.io/Bitstream/gadget-builds.html): color TFT clock; time, weather, overnight Muse alerts; sleeps 11pm–6am; wakes on motion when Build 05's PIR is added (the PIR is an add-on, not included).\n\nDeliverables:\n- Creative: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-14-16.jpg (1:1 feed ad, \"THE CLOCK THAT WORKS THE NIGHT SHIFT\", ABOUT $22 badge, BUILD 06 label)\n- Caption: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-14-16.txt (hook-first copy with price + buy link, ends with \"Follow @glitchmobz_clips for daily drops ⚡\")\n\nStatus — do not post manually yet: this creative was NOT auto-posted and is not \"in the auto-post queue,\" but it has NOT yet been delivered to the main chat as of this draft, and two conflicts need resolving before posting: (1) the run's memory entry flags this file as the alternating poster's ad-hour source and says manual posting would duplicate it; (2) Adrian's same-day answer was that gadget-build ads stay blocked until a real photo of a built unit exists, and this creative is an AI render, not a photo of a built clock. Needs Adrian / poster-owner decision before posting.\n\nQualification on the creative: the image's on-screen humidity/forecast values are illustrative AI-render details, not verified specs from the gadget-builds page; the caption does not repeat them.\n\nRotation.json advanced to pos 86 (next: Air Node, about $25). Memory log appended ~/memory/2026-10-14.md. Goal timeline entry on goal_6627da56580b was reported created by the producing run; verification could not independently re-read the goal timeline, so treat that as reported, not independently confirmed.\n\nNote: a separate 3-hook test for Bedside Clock exists in ~/workspace/ads-daily/hook-test-2026-10-14/ (marked TEST ROW/NOT posted, rotation untouched by that test) — this run prepared the single hourly creative per body, distinct from the test variants. The test's 16:04 EDT generation time was not independently verified in the verification run.",
+      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1791935392000,
+      "createdAt": 1791937545000,
       "lastActivityAt": 1792011195000,
       "lastFocusedAt": 0,
       "running": false,
@@ -67,7 +67,7 @@
       "agent_id": "stack-streamer-clip-farm-short-form-scriptwriter",
       "agent_role": "Short-form scriptwriter",
       "tile_index": 1,
-      "sizeBytes": 68000,
+      "sizeBytes": 66500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -78,14 +78,14 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT.\n\nProduct: Bedside Clock (rotation slot #26, BUILD 06), about $22. Verified against live gadget-builds page (https://icyunvbankai.github.io/Bitstream/gadget-builds.html): color TFT clock; time, weather, overnight Muse alerts; sleeps 11pm–6am; wakes on motion when Build 05's PIR is added (the PIR is an add-on, not included).\n\nDeliverables:\n- Creative: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-14-16.jpg (1:1 feed ad, \"THE CLOCK THAT WORKS THE NIGHT SHIFT\", ABOUT $22 badge, BUILD 06 label)\n- Caption: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-14-16.txt (hook-first copy with price + buy link, ends with \"Follow @glitchmobz_clips for daily drops ⚡\")\n\nStatus — do not post manually yet: this creative was NOT auto-posted and is not \"in the auto-post queue,\" but it has NOT yet been delivered to the main chat as of this draft, and two conflicts need resolving before posting: (1) the run's memory entry flags this file as the alternating poster's ad-hour source and says manual posting would duplicate it; (2) Adrian's same-day answer was that gadget-build ads stay blocked until a real photo of a built unit exists, and this creative is an AI render, not a photo of a built clock. Needs Adrian / poster-owner decision before posting.\n\nQualification on the creative: the image's on-screen humidity/forecast values are illustrative AI-render details, not verified specs from the gadget-builds page; the caption does not repeat them.\n\nRotation.json advanced to pos 86 (next: Air Node, about $25). Memory log appended ~/memory/2026-10-14.md. Goal timeline entry on goal_6627da56580b was reported created by the producing run; verification could not independently re-read the goal timeline, so treat that as reported, not independently confirmed.\n\nNote: a separate 3-hook test for Bedside Clock exists in ~/workspace/ads-daily/hook-test-2026-10-14/ (marked TEST ROW/NOT posted, rotation untouched by that test) — this run prepared the single hourly creative per body, distinct from the test variants. The test's 16:04 EDT generation time was not independently verified in the verification run.",
+      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1791935392000,
+      "createdAt": 1791937545000,
       "lastActivityAt": 1792011195000,
       "lastFocusedAt": 0,
       "running": false,
@@ -104,7 +104,7 @@
       "agent_id": "stack-streamer-clip-farm-short-form-editor",
       "agent_role": "Ruthless short-form editor",
       "tile_index": 2,
-      "sizeBytes": 68000,
+      "sizeBytes": 66500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -115,14 +115,14 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT.\n\nProduct: Bedside Clock (rotation slot #26, BUILD 06), about $22. Verified against live gadget-builds page (https://icyunvbankai.github.io/Bitstream/gadget-builds.html): color TFT clock; time, weather, overnight Muse alerts; sleeps 11pm–6am; wakes on motion when Build 05's PIR is added (the PIR is an add-on, not included).\n\nDeliverables:\n- Creative: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-14-16.jpg (1:1 feed ad, \"THE CLOCK THAT WORKS THE NIGHT SHIFT\", ABOUT $22 badge, BUILD 06 label)\n- Caption: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-14-16.txt (hook-first copy with price + buy link, ends with \"Follow @glitchmobz_clips for daily drops ⚡\")\n\nStatus — do not post manually yet: this creative was NOT auto-posted and is not \"in the auto-post queue,\" but it has NOT yet been delivered to the main chat as of this draft, and two conflicts need resolving before posting: (1) the run's memory entry flags this file as the alternating poster's ad-hour source and says manual posting would duplicate it; (2) Adrian's same-day answer was that gadget-build ads stay blocked until a real photo of a built unit exists, and this creative is an AI render, not a photo of a built clock. Needs Adrian / poster-owner decision before posting.\n\nQualification on the creative: the image's on-screen humidity/forecast values are illustrative AI-render details, not verified specs from the gadget-builds page; the caption does not repeat them.\n\nRotation.json advanced to pos 86 (next: Air Node, about $25). Memory log appended ~/memory/2026-10-14.md. Goal timeline entry on goal_6627da56580b was reported created by the producing run; verification could not independently re-read the goal timeline, so treat that as reported, not independently confirmed.\n\nNote: a separate 3-hook test for Bedside Clock exists in ~/workspace/ads-daily/hook-test-2026-10-14/ (marked TEST ROW/NOT posted, rotation untouched by that test) — this run prepared the single hourly creative per body, distinct from the test variants. The test's 16:04 EDT generation time was not independently verified in the verification run.",
+      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1791935392000,
+      "createdAt": 1791937545000,
       "lastActivityAt": 1792011195000,
       "lastFocusedAt": 0,
       "running": false,
@@ -141,7 +141,7 @@
       "agent_id": "stack-streamer-clip-farm-qc-agent",
       "agent_role": "QC agent",
       "tile_index": 3,
-      "sizeBytes": 68000,
+      "sizeBytes": 66500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792011398518,
+  "scannedAt": 1792011545358,
   "warnings": []
 }
