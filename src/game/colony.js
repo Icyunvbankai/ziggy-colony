@@ -15,6 +15,8 @@ import {
   allocateCells,
   shipPosition,
   createLabel,
+  createTileLabel,
+  agentTileLabel,
   hashString,
   worldToHex,
   DECK_TOP,
@@ -61,8 +63,8 @@ const AGENT_RADIUS = 0.26
 const TRAVEL_RADIUS = 0.12
 /** Progress a live thread adds per second, so a working site visibly grows while you watch. */
 const LIVE_GROWTH = 0.004
-/** How many zones' positions to remember, including repos with nothing running in them. */
-const LAYOUT_MEMORY = 80
+/** How high an agent tile's label floats above the deck: clear of its bot's head. */
+const TILE_LABEL_Y = DECK_TOP + 2.15
 
 export const STATUS_ORDER = ['blocked', 'waiting', 'working', 'celebrating', 'idle', 'sleeping']
 
@@ -185,6 +187,13 @@ export class Colony {
     this.plotGroup = new THREE.Group()
     this.labelGroup = new THREE.Group()
     scene.add(this.plotGroup, this.labelGroup)
+    /**
+     * One small billboard per agent tile, keyed `agent:<thread id>`. Cached across
+     * polls — a label is only rebuilt when its agent's name changes — and disposed
+     * when its agent leaves the roster. Lives in `labelGroup`, so the reflections
+     * pass already excludes it and the HUD dismiss already hides it.
+     */
+    this.tileLabels = new Map()
 
     // Dismissing the HUD has to survive a poll: labels are chrome, and a scan landing while
     // everything is hidden must not quietly put them back on screen.
@@ -620,6 +629,7 @@ export class Colony {
     }
     this._rebuildNavigation()
     this._syncFaunaSites()
+    this._syncTileLabels(roster)
     this.stats = { ...stats, done: stats.celebrating }
     this.astronauts.setRoster(roster, this._world())
     return this.stats
@@ -775,6 +785,55 @@ export class Colony {
     entry.accent = plot.accent
     entry.retiring = false
     return entry
+  }
+
+  /**
+   * One small label per agent tile, anchored to the tile's slot position.
+   *
+   * Cached by agent id: a poll that changes nothing moves nothing, and a label is
+   * only remade when its agent's name changes (the text is baked into the canvas
+   * at creation). Agents that left the roster lose their labels; agents whose
+   * plot was rebuilt get their labels repositioned to the new slot.
+   */
+  _syncTileLabels(roster) {
+    const wanted = new Map()
+    for (const entry of roster) {
+      const thread = entry.thread
+      const plot = this.plots.get(thread.project)
+      wanted.set(`agent:${thread.id}`, {
+        text: agentTileLabel(thread),
+        accent: plot?.accent ?? 0x9a9aa2,
+        plot: thread.project,
+        x: entry.site.x,
+        z: entry.site.z,
+      })
+    }
+
+    for (const [key, label] of this.tileLabels) {
+      if (wanted.has(key)) continue
+      this.labelGroup.remove(label)
+      label.userData.dispose?.()
+      this.tileLabels.delete(key)
+    }
+
+    for (const [key, spec] of wanted) {
+      let label = this.tileLabels.get(key)
+      if (label && label.userData.tileText !== spec.text) {
+        this.labelGroup.remove(label)
+        label.userData.dispose?.()
+        label = null
+      }
+      if (!label) {
+        label = createTileLabel(spec.text, spec.accent)
+        label.userData.tileText = spec.text
+        label.userData.tileKey = key
+        label.userData.baseY = TILE_LABEL_Y
+        this.tileLabels.set(key, label)
+        this.labelGroup.add(label)
+      }
+      label.userData.tilePlot = spec.plot
+      label.position.set(spec.x, TILE_LABEL_Y, spec.z)
+    }
   }
 
   _removeBuilding(id, entry) {
@@ -992,6 +1051,9 @@ export class Colony {
     if (!plot) return
     plot.group.position.y = dy
     if (plot.label) plot.label.position.y = 3.2 + dy
+    for (const label of this.tileLabels.values()) {
+      if (label.userData.tilePlot === name) label.position.y = (label.userData.baseY ?? TILE_LABEL_Y) + dy
+    }
     const faded = dy > 0
     plot.group.traverse((o) => {
       if (!o.isMesh) return
@@ -1005,14 +1067,26 @@ export class Colony {
 
   /**
    * Names fade in for the plots that have something going on, and for whichever one you are
-   * pointing at. Everywhere else the colony stays unlabelled.
+   * pointing at — and every tile stays identifiable in the meantime. Stack (HQ) labels
+   * sit at a readable baseline instead of vanishing on quiet plots, because a quiet
+   * stack's HQ tile still needs its name; agent tile labels sit at a slightly
+   * quieter baseline so ~190 of them read as texture rather than shouting, and the
+   * selected agent's tile goes full bright. The `showLabels` toggle still hides
+   * every label at once.
    */
   _updateLabels(dt) {
     const show = this.uiVisible && this.settings.get('showLabels')
     for (const plot of this.plotOrder) {
       const label = plot.label
       if (!label) continue
-      const wanted = show && (this.activePlots.has(plot.id) || this.hoveredPlot === plot) ? 1 : 0
+      const wanted = show ? (this.activePlots.has(plot.id) || this.hoveredPlot === plot ? 1 : 0.6) : 0
+      const next = THREE.MathUtils.damp(label.material.opacity, wanted, 9, dt)
+      label.material.opacity = next
+      label.visible = next > 0.01
+    }
+    const selectedId = this.astronauts.selected?.id
+    for (const [key, label] of this.tileLabels) {
+      const wanted = show ? (selectedId && key === `agent:${selectedId}` ? 1 : 0.85) : 0
       const next = THREE.MathUtils.damp(label.material.opacity, wanted, 9, dt)
       label.material.opacity = next
       label.visible = next > 0.01

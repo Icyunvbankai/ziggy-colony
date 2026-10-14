@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "Hourly ad for @glitchmobz_clips completed — Door Sentinel (pos 84→85). Product: Door Sentinel (rotation slot #25; gadget-builds page labels it BUILD 05), about $20, PIR motion sensor; Muse announces visitors, keeps a log.",
+      "preview": "Hourly ad for @glitchmobz_clips completed — Door Sentinel (pos 84→85).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "Hourly ad for @glitchmobz_clips completed — Door Sentinel (pos 84→85). Product: Door Sentinel (rotation slot #25; gadget-builds page labels it BUILD 05), about $20, PIR motion sensor; Muse announces visitors, keeps a log.",
+      "preview": "Hourly ad for @glitchmobz_clips completed — Door Sentinel (pos 84→85).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "Hourly ad for @glitchmobz_clips completed — Door Sentinel (pos 84→85). Product: Door Sentinel (rotation slot #25; gadget-builds page labels it BUILD 05), about $20, PIR motion sensor; Muse announces visitors, keeps a log.",
+      "preview": "Hourly ad for @glitchmobz_clips completed — Door Sentinel (pos 84→85).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "Hourly ad for @glitchmobz_clips completed — Door Sentinel (pos 84→85). Product: Door Sentinel (rotation slot #25; gadget-builds page labels it BUILD 05), about $20, PIR motion sensor; Muse announces visitors, keeps a log.",
+      "preview": "Hourly ad for @glitchmobz_clips completed — Door Sentinel (pos 84→85).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792008957352,
+  "scannedAt": 1792008635518,
   "warnings": []
 }

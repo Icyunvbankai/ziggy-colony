@@ -385,18 +385,10 @@ export class Plot {
     // Where the camera aims and where the name plate goes: the middle of the whole zone,
     // so an L-shaped blob is framed as one place rather than from its corner.
     this.middle = new THREE.Vector3(sx / cells.length, 0, sz / cells.length)
-    let anchor = this.localCenters[0]
-    let anchorD = Infinity
-    for (const p of this.localCenters) {
-      const dx = p.x - (this.middle.x - origin.x)
-      const dz = p.z - (this.middle.z - origin.z)
-      const d = dx * dx + dz * dz
-      if (d < anchorD) {
-        anchorD = d
-        anchor = p
-      }
-    }
-    this.labelAnchor = new THREE.Vector3(this.center.x + anchor.x, 0, this.center.z + anchor.z)
+    // The name plate sits over the HQ tile (the root cell, slot 0) rather than the
+    // middle of the zone, so the stack's label identifies the HQ tile itself.
+    // Camera framing still uses `middle` above, which is the whole zone.
+    this.labelAnchor = new THREE.Vector3(origin.x, 0, origin.z)
     this.radius = CELL * Math.sqrt(cells.length)
 
     this.group = new THREE.Group()
@@ -677,13 +669,16 @@ export class Plot {
  * Project name plates. Drawn to a canvas once per project and billboarded in the vertex
  * shader, so they stay upright and legible from any camera angle without a per-frame
  * lookAt on the CPU.
+ *
+ * `options` tunes the plate without changing the shared drawing code: plot labels use
+ * the defaults, per-tile labels pass the small variant (see `createTileLabel`).
  */
-export function createLabel(text, accent, pixelRatio = 4) {
-  const fontSize = 34
+export function createLabel(text, accent, pixelRatio = 4, options = {}) {
+  const fontSize = options.fontSize ?? 34
   const font = `500 ${fontSize}px ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif`
-  const dot = 9
-  const gap = 10
-  const pad = 14
+  const dot = options.dot ?? 9
+  const gap = options.gap ?? 10
+  const pad = options.pad ?? 14
 
   const measure = document.createElement('canvas').getContext('2d')
   measure.font = font
@@ -710,15 +705,19 @@ export function createLabel(text, accent, pixelRatio = 4) {
   c.shadowBlur = 9
   c.fillStyle = 'rgba(0,0,0,0.9)'
   for (let i = 0; i < 3; i++) c.fillText(text, textX, midY) // build the halo up in passes
-  c.beginPath()
-  c.arc(pad + dot / 2, midY, dot / 2, 0, Math.PI * 2)
-  c.fill()
+  if (dot > 0) {
+    c.beginPath()
+    c.arc(pad + dot / 2, midY, dot / 2, 0, Math.PI * 2)
+    c.fill()
+  }
 
   c.shadowBlur = 0
-  c.fillStyle = '#' + new THREE.Color(accent).getHexString()
-  c.beginPath()
-  c.arc(pad + dot / 2, midY, dot / 2, 0, Math.PI * 2)
-  c.fill()
+  if (dot > 0) {
+    c.fillStyle = '#' + new THREE.Color(accent).getHexString()
+    c.beginPath()
+    c.arc(pad + dot / 2, midY, dot / 2, 0, Math.PI * 2)
+    c.fill()
+  }
   c.fillStyle = '#f4f2ee'
   c.fillText(text, textX, midY)
 
@@ -732,7 +731,7 @@ export function createLabel(text, accent, pixelRatio = 4) {
   texture.generateMipmaps = true
   texture.anisotropy = 8
 
-  const height = 0.56
+  const height = options.height ?? 0.56
   const geo = new THREE.PlaneGeometry(height * (w / h), height)
   const mat = new THREE.MeshBasicMaterial({
     map: texture,
@@ -770,6 +769,28 @@ export function createLabel(text, accent, pixelRatio = 4) {
     mat.dispose()
   }
   return mesh
+}
+
+/**
+ * The text on an agent's tile label: the agent's name straight from the roster data
+ * (`title` is the roster `name`; `agent_role` is the short role). The name is used
+ * rather than the role because the role alone is NOT unique inside a stack — eleven
+ * Marketing guides would all read "Website Brand Guide" — while the name is.
+ */
+export function agentTileLabel(thread) {
+  return thread.title || thread.name || thread.id
+}
+
+/**
+ * One agent's tile label: the same billboarded plate as a project label, smaller and
+ * without the accent dot, so ~190 of them can share the colony without shouting.
+ * Anchored to the agent's tile (its slot position), NOT to the bot — the bot wanders
+ * off its tile while it potters, and the label has to keep identifying the tile.
+ * Height 0.30 keeps even the longest roster name (~58 chars) under the ~4.4-unit
+ * spacing between neighbouring slots.
+ */
+export function createTileLabel(text, accent) {
+  return createLabel(text, accent, 4, { height: 0.30, fontSize: 26, dot: 0, gap: 0, pad: 10 })
 }
 
 export function hashString(str) {
