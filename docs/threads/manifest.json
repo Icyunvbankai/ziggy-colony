@@ -1,7 +1,7 @@
 {
-  "scannedAt": 1792004740786,
-  "total_agents": 164,
-  "total_threads": 164,
+  "scannedAt": 1792006205719,
+  "total_agents": 189,
+  "total_threads": 189,
   "stacks": [
     {
       "stack_id": "build-team",
@@ -20,6 +20,12 @@
       "stack_title": "GitHub Team",
       "file": "github-team.json",
       "agent_count": 6
+    },
+    {
+      "stack_id": "marketing-team",
+      "stack_title": "Marketing & Brand Team",
+      "file": "marketing-team.json",
+      "agent_count": 25
     },
     {
       "stack_id": "optimization-team",
