@@ -14,8 +14,6 @@ export const BETA = true
 /** Show the BETA banner/title and read data from the live repo. False on live. */
 export const BETA_BRANDING = false
 
-export const BETA_LABEL = 'BETA'
-
 /** Public raw base of the LIVE colony repo (read-only). */
 export const LIVE_RAW_BASE =
   'https://raw.githubusercontent.com/Icyunvbankai/ziggy-colony/main/docs'

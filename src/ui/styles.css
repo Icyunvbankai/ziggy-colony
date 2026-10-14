@@ -1583,7 +1583,7 @@ kbd {
 .bot-crossing-canvas { cursor: grab; }
 
 /* ── BETA chrome ─────────────────────────────────────────────────────────── */
-.beta-banner {
+.test-banner {
   position: fixed;
   top: 0;
   left: 0;
@@ -1607,30 +1607,30 @@ kbd {
   border-bottom: 2px solid #ffb340;
   box-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
 }
-.beta-banner strong {
+.test-banner strong {
   letter-spacing: 0.06em;
   color: #fff;
 }
-.beta-banner a {
+.test-banner a {
   color: #ffd970;
   text-decoration: underline;
   white-space: nowrap;
 }
-.beta-banner a:hover {
+.test-banner a:hover {
   color: #fff;
 }
-.thread-pop .beta-detail {
+.thread-pop .agent-detail {
   margin: 8px 0 2px;
   font-size: 12px;
   line-height: 1.5;
   color: #c8cede;
 }
-.thread-pop .beta-line + .beta-line {
+.thread-pop .agent-line + .agent-line {
   margin-top: 4px;
 }
-.thread-pop .beta-line b {
+.thread-pop .agent-line b {
   color: #eef1f8;
 }
-.thread-pop .beta-distress {
+.thread-pop .agent-distress {
   color: #ffb3b3;
 }

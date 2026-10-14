@@ -271,7 +271,7 @@ export class Hud {
       this._toggle(
         'Agent distance tiers',
         'agentTiers',
-        'BETA: near bots render in full detail; mid bots as one low-poly mesh; far bots as colour dots. Only near bots cast shadows, and the shadow map updates on demand instead of every frame. Off = the legacy renderer (all bots full detail) for A/B comparison.'
+        'Near bots render in full detail; mid bots as one low-poly mesh; far bots as colour dots. Only near bots cast shadows, and the shadow map updates on demand instead of every frame. Off = the legacy renderer (all bots full detail) for A/B comparison.'
       ),
       this._toggle('Return to isometric', 'autoFrame', 'Eases the angle back when you stop dragging.'),
       this._slider('Field of view', 'fov', 20, 60, 1, (v) => `${v}°`),
@@ -725,21 +725,21 @@ export class Hud {
     bits.push(`<span>${ago(thread.lastActivityAt)}</span>`)
     meta.innerHTML = bits.join('')
 
-    const betaBits = []
-    if (thread.preview) betaBits.push(`<div class="beta-line"><b>Claimed task:</b> ${escapeHtml(String(thread.preview))}</div>`)
+    const detailBits = []
+    if (thread.preview) detailBits.push(`<div class="agent-line"><b>Claimed task:</b> ${escapeHtml(String(thread.preview))}</div>`)
     if (agent.anchor && Number.isFinite(agent.anchor.x)) {
-      betaBits.push(
-        `<div class="beta-line"><b>Home desk:</b> tile ${escapeHtml(String(thread.tile_index ?? ''))} ` +
+      detailBits.push(
+        `<div class="agent-line"><b>Home desk:</b> tile ${escapeHtml(String(thread.tile_index ?? ''))} ` +
           `(${agent.anchor.x.toFixed(1)}, ${agent.anchor.z.toFixed(1)}) — this bot returns here when idle</div>`
       )
     }
     if (agent.status === 'blocked') {
-      betaBits.push(`<div class="beta-line beta-distress"><b>⚠ Distress:</b> this bot is blocked — see the red beacon over its head</div>`)
+      detailBits.push(`<div class="agent-line agent-distress"><b>⚠ Distress:</b> this bot is blocked — see the red beacon over its head</div>`)
     } else if (agent.status === 'working') {
-      betaBits.push(`<div class="beta-line"><b>◆ Claimed:</b> spinning diamond above this bot marks its claimed task</div>`)
+      detailBits.push(`<div class="agent-line"><b>◆ Claimed:</b> spinning diamond above this bot marks its claimed task</div>`)
     }
-    const betaEl = this.$('.thread-pop .beta-detail')
-    if (betaEl) betaEl.innerHTML = betaBits.join('')
+    const detailEl = this.$('.thread-pop .agent-detail')
+    if (detailEl) detailEl.innerHTML = detailBits.join('')
 
     const pct = Math.round((this.actions.progressFor?.(thread.id) ?? 0) * 100)
     this.$('.thread-pop .progress > i').style.width = `${pct}%`
@@ -1189,7 +1189,7 @@ const TEMPLATE = `
     <button class="btn icon ghost" id="btn-deselect" title="Deselect (Esc)">${ICON.close}</button>
   </div>
   <div class="progress"><i></i></div>
-  <div class="beta-detail"></div>
+  <div class="agent-detail"></div>
   <div class="pair">
     <button class="btn primary" id="btn-open" title="Open this thread in the harness it came from (Enter)">${ICON.open} Open</button>
     <button class="btn" id="btn-viewed" title="Stop this thread asking for you until it moves on again (V)">${ICON.eye} Viewed</button>
@@ -1238,10 +1238,10 @@ const TEMPLATE = `
       <div class="legend-row"><i class="badge" style="background:#16301f;color:#7fd39a">⚒</i> running right now, building</div>
       <div class="legend-row"><i class="badge" style="background:#332b12;color:#e6c67f">✓</i> its pull request landed</div>
       <div class="legend-row"><i class="badge" style="background:#1d1f2e;color:#a9a8c0">z</i> nothing for three days</div>
-      <div class="legend-row"><i class="badge" style="background:#0f2a1c;color:#4be08a">◆</i> BETA: spinning diamond — a working bot's claimed task</div>
-      <div class="legend-row"><i class="badge" style="background:#3a0f0f;color:#ff6a6a">▮</i> BETA: red light pillar — a blocked bot in distress</div>
-      <div class="legend-row"><i class="badge" style="background:#1c2436;color:#9fb4d8">⌂</i> BETA: home desk — every bot has a desk it returns to</div>
-      <div class="legend-row"><i class="badge" style="background:#10233a;color:#6fb7d8">≈</i> BETA: terrain — hills, valleys, ponds; bright plots are live, dim plots are dormant</div>
+      <div class="legend-row"><i class="badge" style="background:#0f2a1c;color:#4be08a">◆</i> spinning diamond — a working bot's claimed task</div>
+      <div class="legend-row"><i class="badge" style="background:#3a0f0f;color:#ff6a6a">▮</i> red light pillar — a blocked bot in distress</div>
+      <div class="legend-row"><i class="badge" style="background:#1c2436;color:#9fb4d8">⌂</i> home desk — every bot has a desk it returns to</div>
+      <div class="legend-row"><i class="badge" style="background:#10233a;color:#6fb7d8">≈</i> terrain — hills, valleys, ponds; bright plots are live, dim plots are dormant</div>
     </div>
     <div style="margin-top:18px;display:flex;justify-content:flex-end">
       <button class="btn primary" id="btn-help-close">Got it</button>

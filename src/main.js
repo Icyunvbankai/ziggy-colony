@@ -55,7 +55,7 @@ if (BETA_BRANDING) {
   document.title = 'Bot Crossing — BETA (test colony)'
   app.insertAdjacentHTML(
     'afterbegin',
-    `<div class="beta-banner" role="note">
+    `<div class="test-banner" role="note">
        <strong>🧪 BETA — TEST COLONY</strong>
        <span>Not the live colony. Same real agent data, new terrain + overlays. Nothing here changes live.</span>
        <a href="https://icyunvbankai.github.io/ziggy-colony/" target="_blank" rel="noopener">Live colony ↗</a>
