@@ -49,6 +49,8 @@ const str = (v) => (typeof v === 'string' ? v : '')
  * it still claims a hex zone, exactly like a repo does.
  */
 const PROJECT_RULES = [
+  [/team:social-/i, 'Social'],
+  [/team:github-team/i, 'GitHub Team'],
   [/alts/i, 'ALTS AM'],
   [/glitchmobz|clips/i, 'GlitchMobz Clips'],
   [/sunshine|aceloco|instagram|drip/i, 'Instagram Drips'],
