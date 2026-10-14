@@ -18,6 +18,14 @@ const STORE_KEY = 'botcrossing.settings.v1'
  */
 export const DEFAULT_PRESET = 'balanced'
 
+/**
+ * `maxAgents` is 200 on the default (Balanced) preset: the roster is 164
+ * agents and bots are instanced (~10 draw calls no matter the count), so
+ * truncating the roster on the default buys no frames and silently hides
+ * bots. The low-power presets (Potato/Low) still cap deliberately — an
+ * explicit battery/perf choice. A user can still lower it by hand — that
+ * flips the preset to `custom` and is respected.
+ */
 export const PRESETS = {
   potato: {
     label: 'Potato',
@@ -31,7 +39,7 @@ export const PRESETS = {
       textureQuality: 'low',
       scatterDensity: 0.15,
       groundDetail: 'low',
-      maxAgents: 40,
+      maxAgents: 200,
       stars: false,
       ibl: false,
       tiltShift: false,
@@ -53,7 +61,7 @@ export const PRESETS = {
       textureQuality: 'low',
       scatterDensity: 0.35,
       groundDetail: 'low',
-      maxAgents: 60,
+      maxAgents: 200,
       stars: true,
       ibl: false,
       tiltShift: false,
@@ -75,7 +83,10 @@ export const PRESETS = {
       textureQuality: 'medium',
       scatterDensity: 0.6,
       groundDetail: 'medium',
-      maxAgents: 90,
+      // Agent-level colony (2026-10-14): 164 agent bots. The default preset
+      // must cover the whole roster — a lower cap silently hides bots
+      // (lowest-priority first) while their buildings still render.
+      maxAgents: 200,
       stars: true,
       ibl: true,
       tiltShift: true,
@@ -97,7 +108,7 @@ export const PRESETS = {
       textureQuality: 'high',
       scatterDensity: 0.85,
       groundDetail: 'high',
-      maxAgents: 140,
+      maxAgents: 200,
       stars: true,
       ibl: true,
       tiltShift: true,
@@ -229,6 +240,14 @@ export class Settings {
     // An existing Low/Potato install should not inherit Balanced's new effect by accident.
     if (!Object.hasOwn(stored, 'ambientOcclusion')) {
       this.values.ambientOcclusion = PRESETS[this.values.preset]?.values.ambientOcclusion ?? DEFAULTS.ambientOcclusion
+    }
+    // Agent-level colony (2026-10-14): every preset's maxAgents rose to 200 so
+    // no preset silently hides bots from the 164-agent roster. A stored install
+    // still carrying its preset's old default gets the bump once; a deliberate
+    // custom value (preset 'custom', or any non-default value) is left alone.
+    const OLD_PRESET_CAPS = { potato: 40, low: 60, balanced: 90, high: 140 }
+    if (OLD_PRESET_CAPS[stored.preset] === stored.maxAgents) {
+      this.values.maxAgents = 200
     }
     // Following the selected bot used to be opt-in, so every existing colony has `false` stored
     // against it and a changed default would never reach one. Turned on once, and remembered as

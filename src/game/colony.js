@@ -83,6 +83,12 @@ export function statusFor(thread, now = Date.now()) {
   if (thread.running) return 'working'
   if (thread.prState === 'MERGED') return 'celebrating'
   if (thread.unread) return 'waiting'
+  // Roster agents are present by definition: they are a standing roster, not an
+  // activity history, and the producer stamps them with a flat lastActivityAt
+  // (currently ~4 days old). The 3-day dormancy rule would otherwise read the
+  // whole colony as asleep and fold every stack away. Real signals above —
+  // running, unread, error — still take precedence.
+  if (thread.source === 'agent') return 'idle'
   if (now - thread.lastActivityAt > STALE_MS) return 'sleeping'
   return 'idle'
 }
@@ -471,8 +477,13 @@ export class Colony {
 
   /**
    * Take a fresh scan and reshape the colony around it. Everything here is keyed by stable
-   * ids — repo name for plots, session id for buildings — so a poll that changes nothing
-   * moves nothing on screen.
+   * ids — stack name for plots, stack name for HQ buildings, agent id for bots — so a poll
+   * that changes nothing moves nothing on screen.
+   *
+   * Agent-level layout: one HQ building per stack on the plot's centre tile (slot 0),
+   * and one bot per agent standing on its own tile (slots 1..N). Buildings stay
+   * per-stack — a building per agent would multiply draw calls by the roster size —
+   * while bots are instanced, so the full roster costs no extra draw calls.
    */
   setThreads(threads, archivedIds = new Set(), hiddenProjects = new Set(), knownIds = new Set()) {
     const now = Date.now()
@@ -558,6 +569,10 @@ export class Colony {
         slotOf.set(thread.id, slot)
       }
 
+      // One HQ building per stack — not one per agent — on the centre tile.
+      this._syncStackBuilding(name, plot)
+      seenBuildings.add(`stack:${name}`)
+
       list.forEach((thread) => {
         const i = slotOf.get(thread.id)
         const status = statusFor(thread, now)
@@ -566,17 +581,19 @@ export class Colony {
         if (status === 'waiting' || status === 'blocked' || status === 'working') active.add(plot.id)
         stats.agents++
 
-        const building = this._syncBuilding(thread, plot, i)
-        seenBuildings.add(thread.id)
-
+        // This agent's own tile: slot 0 is the stack HQ, so agent tiles start at 1.
+        // Tile sites are clear by construction — clutter avoids slots and the HQ's
+        // keep radius is far smaller than the centre-to-ring distance — so no
+        // navigation lookup is needed to place them.
+        const tile = plot.worldSlot(i + 1)
         roster.push({
           id: thread.id,
           thread,
           status,
-          site: null, // assigned after all buildings have reached the navigation map
-          // Where the work actually is. A working astronaut circles it rather than standing
-          // at one spot, so it needs the building, not just a place to stand near it.
-          anchor: building.mesh.position.clone(),
+          site: tile,
+          // A working agent circles its own tile rather than the HQ, so a busy bot
+          // stays in its own area; an idle one potters within ~2.8 of it.
+          anchor: tile.clone(),
           // Already on the colony's books, so it does not need an entrance.
           known: knownIds.has(thread.id),
         })
@@ -592,11 +609,16 @@ export class Colony {
     this.threads = new Map(live.map((t) => [t.id, t]))
     this.urgentPlots = urgent
     this.activePlots = active
-    this._rebuildNavigation()
-    for (const member of roster) {
-      const entry = this.buildings.get(member.id)
-      member.site = this._workSite(this.plots.get(entry.plot), entry, entry.slot)
+    // Per-stack activity, for the HQ buildings: a building is "live" when any of its
+    // stack's agents is running, "active" when any of them wants attention.
+    this._projectState = new Map()
+    for (const [name, list] of projects) {
+      this._projectState.set(name, {
+        live: list.some((t) => t.running),
+        active: list.some((t) => t.running || t.unread || t.hasError),
+      })
     }
+    this._rebuildNavigation()
     this._syncFaunaSites()
     this.stats = { ...stats, done: stats.celebrating }
     this.astronauts.setRoster(roster, this._world())
@@ -608,7 +630,8 @@ export class Colony {
     // — never because a different repo gained or lost a thread. `plotCells` carries it
     // between polls, and the colony file carries it between sessions.
     const layout = allocateCells(
-      projects.map(([name, list]) => ({ id: name, size: list.length })),
+      // +1 reserves the centre tile for the stack HQ building; agents take slots 1..N.
+      projects.map(([name, list]) => ({ id: name, size: list.length + 1 })),
       this.plotCells
     )
     // Remembered, not replaced: a project that has just lost its last thread keeps its
@@ -715,30 +738,35 @@ export class Colony {
     return PLOT_PALETTE[start]
   }
 
-  _syncBuilding(thread, plot, index) {
-    let entry = this.buildings.get(thread.id)
+  /**
+   * One HQ building per stack, on the plot's centre tile (slot 0). Keyed
+   * `stack:<project>` so a building can never collide with an agent id, and so a
+   * stack that drops out of the scan retires exactly one building.
+   */
+  _syncStackBuilding(projectName, plot) {
+    const id = `stack:${projectName}`
+    let entry = this.buildings.get(id)
     // Whole, always. A building that has finished rising is a building you can see all of.
     const target = 1
 
     if (!entry) {
-      const mesh = createBuilding({ seed: hashString(thread.id), accent: plot.accent })
-      const pos = plot.worldSlot(index)
+      const mesh = createBuilding({ seed: hashString(id), accent: plot.accent })
+      const pos = plot.worldSlot(0)
       mesh.position.copy(pos)
-      mesh.rotation.y = ((hashString(thread.id) >>> 8) % 360) * (Math.PI / 180)
+      mesh.rotation.y = ((hashString(id) >>> 8) % 360) * (Math.PI / 180)
       // New buildings rise from nothing rather than appearing whole.
       mesh.userData.setProgress(0)
       this.worldGroup.add(mesh)
-      entry = { mesh, plot: plot.id, slot: index, progress: 0, target, retiring: false }
-      this.buildings.set(thread.id, entry)
+      entry = { mesh, plot: plot.id, slot: 0, project: projectName, progress: 0, target, retiring: false }
+      this.buildings.set(id, entry)
     } else {
       // Where this building belongs *now*. Comparing the world position rather than the
-      // plot id and slot number is what catches a zone that was rebuilt underneath it: the
-      // repo is the same and the slot is the same, but the ground moved, and a habitat left
-      // behind on bare terrain takes its astronaut off the plot with it.
-      const want = plot.worldSlot(index, this._slotAt || (this._slotAt = new THREE.Vector3()))
-      if (entry.plot !== plot.id || entry.slot !== index || entry.mesh.position.distanceToSquared(want) > 1e-4) {
+      // plot id is what catches a zone that was rebuilt underneath it: the stack is the
+      // same and the slot is the same, but the ground moved, and a habitat left behind
+      // on bare terrain takes its crew off the plot with it.
+      const want = plot.worldSlot(0, this._slotAt || (this._slotAt = new THREE.Vector3()))
+      if (entry.plot !== plot.id || entry.mesh.position.distanceToSquared(want) > 1e-4) {
         entry.plot = plot.id
-        entry.slot = index
         entry.mesh.position.copy(want)
       }
     }
@@ -991,45 +1019,6 @@ export class Colony {
     }
   }
 
-  /** Where the astronaut stands: just outside its building, facing in. */
-  _workSite(plot, entry, index) {
-    const b = entry.mesh.position
-    // Outward from the *middle* of the zone rather than from its root tile: the root sits
-    // on one edge of a grown blob, and standing spots measured from there all point the
-    // same way instead of fanning around the buildings.
-    const middle = plot.middle || plot.center
-    const dx = b.x - middle.x
-    const dz = b.z - middle.z
-    const len = Math.hypot(dx, dz)
-    // Buildings in the middle of a plot have no outward direction, so fan those out by index.
-    const a = len > 0.2 ? Math.atan2(dz, dx) : (index * 2.4) % (Math.PI * 2)
-    // Clear of the building's *own* footprint rather than a fixed 2.35: a big habitat blocks
-    // more ground than a small one, and a standing spot inside that radius is a spot the
-    // crew can never actually reach — it walks at the wall for as long as the thread lives.
-    const blocked = (entry.mesh.userData.footprint || 1.2) * 0.92 + AGENT_RADIUS
-    const stand = Math.max(2.35, blocked + 0.5)
-    let site = new THREE.Vector3(b.x + Math.cos(a) * stand, 0, b.z + Math.sin(a) * stand)
-    // Outward points straight off the zone for a building on its edge, and an astronaut
-    // standing in the neighbouring repo's yard reads as belonging to that repo. The inside
-    // of its own plot is always the better answer when the outside is somebody else's.
-    const onPlot = (v) => {
-      const cell = worldToHex(v.x, v.z)
-      return plot.cellKeys.has(`${cell.q},${cell.r}`)
-    }
-    if (!onPlot(site)) {
-      const inward = new THREE.Vector3(b.x - Math.cos(a) * stand, 0, b.z - Math.sin(a) * stand)
-      if (onPlot(inward)) site = inward
-    }
-    // Pick against the complete, current map, including scaffolds about to rise. A grid
-    // cell alone is insufficient: it can still be inside a building's keep-out radius.
-    const free = this.nav?.nearestClear(site.x, site.z, PLOT_CELL, (x, z) => {
-      const cell = worldToHex(x, z)
-      return plot.cellKeys.has(`${cell.q},${cell.r}`)
-    }) || this.nav?.nearestClear(site.x, site.z, PLOT_CELL * 2)
-    if (free) site.set(free.x, 0, free.z)
-    return site
-  }
-
   // ── per-frame ───────────────────────────────────────────────────────────────────────
 
   update(dt, elapsed, focus) {
@@ -1081,13 +1070,20 @@ export class Colony {
     }
   }
 
+  /** A stack HQ is live when any of its agents is running. */
   _isLive(id) {
+    if (typeof id === 'string' && id.startsWith('stack:')) {
+      return Boolean(this._projectState?.get(id.slice(6))?.live)
+    }
     const thread = this.threads.get(id)
     return Boolean(thread && thread.running)
   }
 
-  /** A site somebody is standing at: running, or stopped waiting on you. */
+  /** A stack HQ is active when any of its agents is running, or stopped waiting on you. */
   _isActive(id) {
+    if (typeof id === 'string' && id.startsWith('stack:')) {
+      return Boolean(this._projectState?.get(id.slice(6))?.active)
+    }
     const thread = this.threads.get(id)
     return Boolean(thread && (thread.running || thread.unread || thread.hasError))
   }

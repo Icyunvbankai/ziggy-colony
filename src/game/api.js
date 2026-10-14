@@ -7,7 +7,7 @@ import { mergeState } from './merge-state.js'
  *   VITE_BOT_CROSSING_STATIC=1 vite build --base=./
  * Off by default — the live-server path below is untouched.
  */
-const STATIC = import.meta.env.VITE_BOT_CROSSING_STATIC === '1'
+const STATIC = import.meta.env?.VITE_BOT_CROSSING_STATIC === '1'
 const STATIC_STATE_KEY = 'botcrossing.static-state'
 const STATIC_VIEWER_NOTE = 'This colony is a read-only viewer — Muse threads live in the Muse app.'
 
@@ -25,12 +25,225 @@ const post = (url, payload) =>
     body: JSON.stringify(payload),
   })
 
+/**
+ * Agent-level threads: the manifest + one file per stack, with the old merged
+ * bundle as the fallback.
+ *
+ * Contract (producer: the per-stack generator): `threads/manifest.json` lists the
+ * stack files; each stack file holds that stack's agents, either as `threads`
+ * (already thread-shaped) or as `agents` (`{ agent_id, name, role }`, mapped to
+ * threads below). The manifest carries `generatedAt`/`scannedAt`, which MUST bump
+ * whenever any stack file changes — an unchanged stamp is what lets a poll skip
+ * refetching every stack file.
+ *
+ * Partial-failure policy: one missing stack file must NOT retire other stacks'
+ * bots. Each stack keeps its last-good threads; a failed stack is retried on the
+ * next poll (even when the manifest stamp is unchanged), and the merged list is
+ * what `poll()` / `applyThreads()` / `setThreads()` already consume, so nothing
+ * downstream changes shape.
+ */
+const THREADS_MANIFEST_URL = 'threads/manifest.json'
+const THREADS_BUNDLE_URL = 'threads.json'
+
+/** Last manifest generation stamp seen; unchanged => stack files need no refetch. */
+let lastManifestStamp = null
+/** Per-stack last-good threads, keyed by the manifest's stack key. */
+const lastGoodByStack = new Map()
+/** Last good merged result from any source — returned when a poll fetches nothing new. */
+let lastGoodMerged = null
+/** Stack keys whose last fetch failed — retried on the next poll. */
+const failedStacks = new Set()
+
+/** The manifest's stack list, tolerating its plausible shapes. */
+function manifestStacks(manifest) {
+  const raw = Array.isArray(manifest)
+    ? manifest
+    : manifest?.stacks ?? manifest?.files ?? manifest?.threads ?? []
+  const out = []
+  const push = (entry, fallbackKey) => {
+    if (typeof entry === 'string') {
+      out.push({ key: fallbackKey, file: entry.includes('/') ? entry : `threads/${entry}`, title: null })
+      return
+    }
+    if (!entry || typeof entry !== 'object') return
+    let file =
+      entry.file || entry.path || entry.url || entry.href ||
+      (entry.stack_id || entry.id ? `threads/${entry.stack_id || entry.id}.json` : null)
+    if (!file) return
+    // A bare filename in the manifest is relative to the threads/ directory
+    // (the live manifest lists `build-team.json`, not `threads/build-team.json`).
+    if (!file.includes('/') && !file.startsWith('http')) file = `threads/${file}`
+    out.push({
+      key: entry.stack_id || entry.id || entry.name || file,
+      file,
+      title: entry.stack_title || entry.stackTitle || entry.title || entry.name || null,
+    })
+  }
+  if (Array.isArray(raw)) raw.forEach((entry, i) => push(entry, `stack-${i}`))
+  else if (raw && typeof raw === 'object') Object.entries(raw).forEach(([k, v]) => push(v, k))
+  return out
+}
+
+/** One stack file → thread-shaped entries the colony already understands. */
+function normalizeStackThreads(data, stackKey, stackTitle) {
+  const container = data && typeof data === 'object' && !Array.isArray(data) ? data : {}
+  const project = container.stack_title || container.stackTitle || container.title || stackTitle || stackKey
+  const entries =
+    container.threads || container.agents ||
+    (Array.isArray(data) ? data : []) ||
+    container.stack?.agents || container.stack?.threads || []
+  // The live stack files carry `tile_index` in file order; honour it so slot
+  // assignment follows the producer's tile order even if file order ever drifts.
+  const ordered = [...(entries || [])].sort(
+    (a, b) => (a?.tile_index ?? Infinity) - (b?.tile_index ?? Infinity)
+  )
+  const out = []
+  for (const entry of ordered) {
+    if (!entry || typeof entry !== 'object') continue
+    // Already thread-shaped (the live stack files: full thread fields plus
+    // `agent_id` / `agent_role` / `tile_index`): pass through, keeping the
+    // producer's own stamps. The roster-presence rule lives in `statusFor`,
+    // not here — no timestamp is rewritten.
+    if (entry.id && entry.title) {
+      out.push({
+        ...entry,
+        project: entry.project || project,
+        lastActivityAt: entry.lastActivityAt || Date.now(),
+        createdAt: entry.createdAt ?? 0,
+      })
+      continue
+    }
+    // Raw roster shape: `{ agent_id, name, role }` — no thread fields yet.
+    if (entry.agent_id || (entry.name && entry.role)) {
+      const agentId = String(entry.agent_id ?? entry.id ?? '')
+      if (!agentId) continue
+      out.push({
+        id: typeof entry.id === 'string' && entry.id.startsWith('muse:') ? entry.id : `muse:agent:${agentId}`,
+        title: entry.name || entry.title || agentId,
+        preview: entry.role || entry.preview || '',
+        project,
+        // Roster order is the stable order: equal createdAt keeps the file's order
+        // through the sort in setThreads, so slots stay put poll to poll.
+        createdAt: Number(entry.createdAt ?? entry.created_at ?? 0) || 0,
+        // An agent on the roster is present. A missing stamp means "now", not
+        // "four days ago" — otherwise every stack reads as dormant and folds away.
+        lastActivityAt: Number(entry.lastActivityAt ?? entry.last_activity_at ?? 0) || Date.now(),
+        lastFocusedAt: 0,
+        running: Boolean(entry.running ?? entry.active ?? false),
+        unread: false,
+        hasError: Boolean(entry.hasError ?? false),
+        starred: false,
+        routine: false,
+        archived: false,
+        prState: '',
+        sizeBytes: 2000,
+        canOpen: false,
+        model: 'Muse Spark',
+        source: 'agent',
+        projectPath: '',
+        worktree: '',
+        cwd: '',
+        gitBranch: '',
+        effort: '',
+        subagents: undefined,
+        role: entry.role || '',
+        ref: { kind: 'agent', id: agentId },
+      })
+      continue
+    }
+    // Anything else (an id without a title, or neither shape) is unusable.
+  }
+  return out
+}
+
+async function fetchSplitThreads() {
+  const res = await fetch(`${THREADS_MANIFEST_URL}?v=${Date.now()}`)
+  if (!res.ok) throw new Error(`Could not load ${THREADS_MANIFEST_URL} (${res.status})`)
+  const manifest = await res.json()
+  const stacks = manifestStacks(manifest)
+  if (!stacks.length) throw new Error('threads manifest lists no stack files')
+  const stamp = manifest.generatedAt ?? manifest.generated_at ?? manifest.scannedAt ?? manifest.scanned_at ?? null
+
+  // Unchanged manifest + no outstanding failures + a cached merge: skip the stack
+  // fetches entirely. The manifest is refetched every poll (it is tiny); the tens
+  // of KB of stack files are only refetched when something actually changed.
+  if (stamp !== null && stamp === lastManifestStamp && !failedStacks.size && lastGoodMerged) {
+    return lastGoodMerged
+  }
+  lastManifestStamp = stamp
+
+  const results = await Promise.allSettled(
+    stacks.map(async (stack) => {
+      // Cache-buster: Pages caches static files, and the colony polls every 15s.
+      const r = await fetch(`${stack.file}?v=${Date.now()}`)
+      if (!r.ok) throw new Error(`Could not load ${stack.file} (${r.status})`)
+      return { stack, threads: normalizeStackThreads(await r.json(), stack.key, stack.title) }
+    })
+  )
+  const warnings = []
+  results.forEach((result, i) => {
+    const stack = stacks[i]
+    if (result.status === 'fulfilled') {
+      lastGoodByStack.set(stack.key, result.value.threads)
+      failedStacks.delete(stack.key)
+    } else {
+      // Keep this stack's last-good bots; the failure is retried on the next poll.
+      failedStacks.add(stack.key)
+      warnings.push(`Stack ${stack.key} could not be refreshed — showing its last good bots`)
+    }
+  })
+
+  // Merge in manifest order so the list is deterministic; first id wins.
+  const seen = new Set()
+  const threads = []
+  for (const stack of stacks) {
+    for (const thread of lastGoodByStack.get(stack.key) || []) {
+      if (seen.has(thread.id)) continue
+      seen.add(thread.id)
+      threads.push(thread)
+    }
+  }
+  if (!threads.length) throw new Error('No stack files could be loaded')
+  const merged = {
+    threads,
+    scannedAt: typeof stamp === 'number' ? stamp : Date.now(),
+    warnings,
+  }
+  lastGoodMerged = merged
+  return merged
+}
+
+/** The old merged bundle — the fallback when the manifest (or every stack file) is gone. */
+async function fetchBundleThreads() {
+  // Cache-buster: Pages caches static files, and the colony polls every 15s.
+  const res = await fetch(`${THREADS_BUNDLE_URL}?v=${Date.now()}`)
+  if (!res.ok) throw new Error(`Could not load threads.json (${res.status})`)
+  const body = await res.json()
+  const out = {
+    threads: Array.isArray(body) ? body : body.threads || [],
+    scannedAt: body.scannedAt ?? Date.now(),
+    warnings: body.warnings || [],
+  }
+  lastGoodMerged = out
+  return out
+}
+
 export const fetchThreads = async () => {
   if (!STATIC) return req('/api/threads')
-  // Cache-buster: Pages caches static files, and the colony polls every 15s.
-  const res = await fetch(`threads.json?v=${Date.now()}`)
-  if (!res.ok) throw new Error(`Could not load threads.json (${res.status})`)
-  return res.json()
+  try {
+    return await fetchSplitThreads()
+  } catch {
+    // Manifest missing, malformed, or every stack file failed: the merged bundle
+    // is the old shape the client has always read.
+  }
+  try {
+    return await fetchBundleThreads()
+  } catch (err) {
+    // A poll that fetches nothing new keeps the last good colony rather than
+    // wiping the map; the next poll retries.
+    if (lastGoodMerged) return lastGoodMerged
+    throw err
+  }
 }
 
 /**
