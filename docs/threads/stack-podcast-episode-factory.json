@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-podcast-episode-factory-topic-researcher",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-scriptwriter",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-script-verifier",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-script-repair",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-voice-producer",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -189,7 +189,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-audio-verifier",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -226,7 +226,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-audio-repair",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -263,7 +263,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-publisher",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -300,7 +300,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-distributor",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -337,7 +337,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-final-verifier",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -374,7 +374,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-qc-agent",
-      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episo",
+      "preview": "Spotify episode check completed for show 6gkWdO6ur00orh1dzbsVmZ. After one transient 401 on the first attempt, a retry returned 11 episodes: 10 status PROCESSING and 1 status FAILED. Because any episode is still PROCESSING, the task condition was not met; no user message was delivered and the cron remains enabled. Episodes data from save-to-spotify --json episodes.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -410,6 +410,6 @@
       }
     }
   ],
-  "scannedAt": 1792010404150,
+  "scannedAt": 1792010780477,
   "warnings": []
 }
