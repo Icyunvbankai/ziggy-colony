@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity-loop run completed 18:55 EDT (succeeded; no summary recorded).",
+      "preview": "Productivity-loop cycle 6 completed at 2026-10-14 18:25 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity-loop run completed 18:55 EDT (succeeded; no summary recorded).",
+      "preview": "Productivity-loop cycle 6 completed at 2026-10-14 18:25 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity-loop run completed 18:55 EDT (succeeded; no summary recorded).",
+      "preview": "Productivity-loop cycle 6 completed at 2026-10-14 18:25 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity-loop run completed 18:55 EDT (succeeded; no summary recorded).",
+      "preview": "Productivity-loop cycle 6 completed at 2026-10-14 18:25 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792018809587,
+  "scannedAt": 1792020409775,
   "warnings": []
 }
