@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-mr-sunshine-state-account-lead",
-      "preview": "Alternating poster 17:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
+      "preview": "alternating-hourly-poster run 2026-10-14 17:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); capability check passed (0 posts in last 2h). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-content-strategist",
-      "preview": "Alternating poster 17:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
+      "preview": "alternating-hourly-poster run 2026-10-14 17:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); capability check passed (0 posts in last 2h). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-poster",
-      "preview": "Alternating poster 17:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
+      "preview": "alternating-hourly-poster run 2026-10-14 17:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); capability check passed (0 posts in last 2h). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-analyst",
-      "preview": "Alternating poster 17:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
+      "preview": "alternating-hourly-poster run 2026-10-14 17:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); capability check passed (0 posts in last 2h). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-qc-agent",
-      "preview": "Alternating poster 17:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
+      "preview": "alternating-hourly-poster run 2026-10-14 17:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); capability check passed (0 posts in last 2h). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792012291344,
+  "scannedAt": 1792012798920,
   "warnings": []
 }
