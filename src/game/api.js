@@ -1,4 +1,5 @@
 import { mergeState } from './merge-state.js'
+import { BETA_BRANDING, LIVE_RAW_BASE, FALLBACK_STATE_URL } from '../beta/config.js'
 
 /**
  * Static hosting (GitHub Pages): there is no server, so threads and colony state
@@ -156,9 +157,10 @@ function normalizeStackThreads(data, stackKey, stackTitle) {
   return out
 }
 
-async function fetchSplitThreads() {
-  const res = await fetch(`${THREADS_MANIFEST_URL}?v=${Date.now()}`)
-  if (!res.ok) throw new Error(`Could not load ${THREADS_MANIFEST_URL} (${res.status})`)
+async function fetchSplitThreads(urlBase = '') {
+  const manifestUrl = urlBase ? `${urlBase}/${THREADS_MANIFEST_URL}` : THREADS_MANIFEST_URL
+  const res = await fetch(`${manifestUrl}?v=${Date.now()}`)
+  if (!res.ok) throw new Error(`Could not load ${manifestUrl} (${res.status})`)
   const manifest = await res.json()
   const stacks = manifestStacks(manifest)
   if (!stacks.length) throw new Error('threads manifest lists no stack files')
@@ -175,8 +177,11 @@ async function fetchSplitThreads() {
   const results = await Promise.allSettled(
     stacks.map(async (stack) => {
       // Cache-buster: Pages caches static files, and the colony polls every 15s.
-      const r = await fetch(`${stack.file}?v=${Date.now()}`)
-      if (!r.ok) throw new Error(`Could not load ${stack.file} (${r.status})`)
+      // BETA: stack files are fetched from the same base as the manifest
+      // (the live repo at runtime, or the bundled fallback copy).
+      const stackUrl = urlBase ? `${urlBase}/${stack.file}` : stack.file
+      const r = await fetch(`${stackUrl}?v=${Date.now()}`)
+      if (!r.ok) throw new Error(`Could not load ${stackUrl} (${r.status})`)
       return { stack, threads: normalizeStackThreads(await r.json(), stack.key, stack.title) }
     })
   )
@@ -214,10 +219,11 @@ async function fetchSplitThreads() {
 }
 
 /** The old merged bundle — the fallback when the manifest (or every stack file) is gone. */
-async function fetchBundleThreads() {
+async function fetchBundleThreads(urlBase = '') {
   // Cache-buster: Pages caches static files, and the colony polls every 15s.
-  const res = await fetch(`${THREADS_BUNDLE_URL}?v=${Date.now()}`)
-  if (!res.ok) throw new Error(`Could not load threads.json (${res.status})`)
+  const bundleUrl = urlBase ? `${urlBase}/${THREADS_BUNDLE_URL}` : THREADS_BUNDLE_URL
+  const res = await fetch(`${bundleUrl}?v=${Date.now()}`)
+  if (!res.ok) throw new Error(`Could not load ${bundleUrl} (${res.status})`)
   const body = await res.json()
   const out = {
     threads: Array.isArray(body) ? body : body.threads || [],
@@ -230,6 +236,33 @@ async function fetchBundleThreads() {
 
 export const fetchThreads = async () => {
   if (!STATIC) return req('/api/threads')
+  // BETA branding: read the SAME public data the live colony publishes, at runtime,
+  // from the live repo. If that fails, fall back to the bundled copy of that
+  // public data shipped with this build. The beta never writes anywhere.
+  // On live (branding off), data comes from local files — see below.
+  if (BETA_BRANDING) {
+    try {
+      return await fetchSplitThreads(LIVE_RAW_BASE)
+    } catch {
+      /* live manifest/stack files unreachable: try the live bundle */
+    }
+    try {
+      return await fetchBundleThreads(LIVE_RAW_BASE)
+    } catch {
+      /* live bundle unreachable: bundled fallback copy */
+    }
+    try {
+      return await fetchSplitThreads('beta-data')
+    } catch {
+      /* bundled manifest unreachable: bundled bundle */
+    }
+    try {
+      return await fetchBundleThreads('beta-data')
+    } catch (err) {
+      if (lastGoodMerged) return lastGoodMerged
+      throw err
+    }
+  }
   try {
     return await fetchSplitThreads()
   } catch {
@@ -265,6 +298,33 @@ function adoptBase(state, updatedAt) {
 }
 
 export const fetchState = async () => {
+  // BETA branding: this browser's own saved state (beta origin) wins, then the live
+  // repo's published public state, then the bundled fallback copy. Read-only
+  // throughout — the beta never writes to the live repo.
+  if (BETA_BRANDING) {
+    try {
+      const saved = localStorage.getItem(STATIC_STATE_KEY)
+      if (saved) {
+        const state = JSON.parse(saved)
+        adoptBase(state)
+        return state
+      }
+    } catch {
+      /* corrupted local state: fall through to the published seed */
+    }
+    for (const url of [`${LIVE_RAW_BASE}/state.json`, FALLBACK_STATE_URL]) {
+      try {
+        const res = await fetch(`${url}?v=${Date.now()}`)
+        if (!res.ok) continue
+        const state = await res.json()
+        adoptBase(state)
+        return state
+      } catch {
+        /* try the next source */
+      }
+    }
+    throw new Error('Could not load beta state.json')
+  }
   if (STATIC) {
     // This browser's own saved colony wins over the seed file — that is what
     // makes archive/hide/layout persist per device without a server.

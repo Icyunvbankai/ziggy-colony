@@ -4,6 +4,7 @@ import { TIMES, systemTimeOfDay } from '../world/sky.js'
 import { STATUS_LABEL } from '../game/colony.js'
 import { FACE, FRAME_COLS, FRAME_ROWS } from '../agents/faces.js'
 import { PLOT_PALETTE, hashString } from '../world/plots.js'
+import { BETA_BRANDING } from '../beta/config.js'
 
 /**
  * The whole HUD, in plain DOM.
@@ -267,6 +268,11 @@ export class Hud {
     )
     view.append(
       this._toggle('Follow selected bot', 'followSelected', 'Tracks the selected bot until you deselect. Drag to pan, right-drag to orbit, and scroll to zoom.'),
+      this._toggle(
+        'Agent distance tiers',
+        'agentTiers',
+        'BETA: near bots render in full detail; mid bots as one low-poly mesh; far bots as colour dots. Only near bots cast shadows, and the shadow map updates on demand instead of every frame. Off = the legacy renderer (all bots full detail) for A/B comparison.'
+      ),
       this._toggle('Return to isometric', 'autoFrame', 'Eases the angle back when you stop dragging.'),
       this._slider('Field of view', 'fov', 20, 60, 1, (v) => `${v}°`),
       this._toggle('Project labels', 'showLabels'),
@@ -709,8 +715,31 @@ export class Hud {
     if (thread.worktree) bits.push(`<span class="tag">⑂ ${escapeHtml(thread.worktree)}</span>`)
     if (thread.gitBranch) bits.push(`<span class="tag">${escapeHtml(thread.gitBranch)}</span>`)
     if (thread.model) bits.push(`<span class="tag">${escapeHtml(shortModel(thread.model))}</span>`)
+    // BETA: harness-adapter / source info — which adapter owns this thread and
+    // where the record came from — plus the bot's claimed task, its home desk
+    // and a distress line when it is blocked.
+    if (thread.source) bits.push(`<span class="tag">src: ${escapeHtml(String(thread.source))}</span>`)
+    if (thread.harness) bits.push(`<span class="tag">adapter: ${escapeHtml(String(thread.harness))}</span>`)
+    if (thread.ref?.kind) bits.push(`<span class="tag">ref: ${escapeHtml(String(thread.ref.kind))}</span>`)
+    if (thread.agent_role) bits.push(`<span class="tag">role: ${escapeHtml(String(thread.agent_role))}</span>`)
     bits.push(`<span>${ago(thread.lastActivityAt)}</span>`)
     meta.innerHTML = bits.join('')
+
+    const betaBits = []
+    if (thread.preview) betaBits.push(`<div class="beta-line"><b>Claimed task:</b> ${escapeHtml(String(thread.preview))}</div>`)
+    if (agent.anchor && Number.isFinite(agent.anchor.x)) {
+      betaBits.push(
+        `<div class="beta-line"><b>Home desk:</b> tile ${escapeHtml(String(thread.tile_index ?? ''))} ` +
+          `(${agent.anchor.x.toFixed(1)}, ${agent.anchor.z.toFixed(1)}) — this bot returns here when idle</div>`
+      )
+    }
+    if (agent.status === 'blocked') {
+      betaBits.push(`<div class="beta-line beta-distress"><b>⚠ Distress:</b> this bot is blocked — see the red beacon over its head</div>`)
+    } else if (agent.status === 'working') {
+      betaBits.push(`<div class="beta-line"><b>◆ Claimed:</b> spinning diamond above this bot marks its claimed task</div>`)
+    }
+    const betaEl = this.$('.thread-pop .beta-detail')
+    if (betaEl) betaEl.innerHTML = betaBits.join('')
 
     const pct = Math.round((this.actions.progressFor?.(thread.id) ?? 0) * 100)
     this.$('.thread-pop .progress > i').style.width = `${pct}%`
@@ -850,6 +879,24 @@ export class Hud {
     c.fillStyle = '#000'
     for (let y = 0; y < size; y += 3) c.fillRect(0, y, size, 1)
     c.globalAlpha = 1
+  }
+
+  /**
+   * Persistent tier/quality indicator (Proposal 3): how many bots are in each
+   * camera-distance tier right now. Always visible — it is the one readout
+   * that says whether the tiered renderer is doing anything. DOM writes only
+   * when the text actually changes.
+   */
+  setTierStats(stats) {
+    if (!stats) return
+    const el = this.$('.tier-chip')
+    const text = stats.enabled
+      ? `LOD · ${stats.near} near · ${stats.mid} mid · ${stats.far} far`
+      : 'LOD off · legacy renderer'
+    if (this._last.tierText !== text) {
+      this._last.tierText = text
+      el.textContent = text
+    }
   }
 
   setFps(perf, viewport, extra) {
@@ -1062,6 +1109,9 @@ function ago(ts) {
   return `${Math.floor(s / 86400)}d ago`
 }
 
+const HELP_SUB_BETA = `<b>🧪 BETA — TEST COLONY. Not the live colony.</b> Same real agent data, read live from the public colony data. New in this beta: real terrain (hills, valleys, ponds and a sea — plots sit on the land as terraces, bots walk over the hills), claim markers (spinning diamond = a working bot's claimed task), red distress beacons over blocked bots, a home desk per bot, status-coloured rings under every bot, and dimming for dormant stacks. Nothing you do here changes the live colony. Navigation works like Google Earth — drag the ground itself, right-drag to tilt, scroll to zoom in on whatever is under the cursor.`
+const HELP_SUB_LIVE = `Real agent data, live from the colony. Real terrain (hills, valleys, ponds and a sea — plots sit on the land as terraces, bots walk over the hills), claim markers (spinning diamond = a working bot's claimed task), red distress beacons over blocked bots, a home desk per bot, status-coloured rings under every bot, and dimming for dormant stacks. Navigation works like Google Earth — drag the ground itself, right-drag to tilt, scroll to zoom in on whatever is under the cursor.`
+
 const TEMPLATE = `
 <aside class="side panel">
   <div class="grab"></div>
@@ -1139,6 +1189,7 @@ const TEMPLATE = `
     <button class="btn icon ghost" id="btn-deselect" title="Deselect (Esc)">${ICON.close}</button>
   </div>
   <div class="progress"><i></i></div>
+  <div class="beta-detail"></div>
   <div class="pair">
     <button class="btn primary" id="btn-open" title="Open this thread in the harness it came from (Enter)">${ICON.open} Open</button>
     <button class="btn" id="btn-viewed" title="Stop this thread asking for you until it moves on again (V)">${ICON.eye} Viewed</button>
@@ -1148,12 +1199,13 @@ const TEMPLATE = `
 
 <div class="toasts"></div>
 <div class="fps panel"></div>
+<div class="tier-chip panel"></div>
 <div class="hint-pill panel"></div>
 
 <div class="help">
   <div class="sheet panel">
-    <h2>Bot Crossing</h2>
-    <p class="sub">Every coding-agent thread on this machine is a bot. They walk out of the ship, claim a plot for their repo, and build. Click one to open its thread; click a zone — its deck or its name — for the repo itself, and start a new conversation there. Hide a repo from that panel if you would rather not see it — its threads stay in your harness, and you can show it again from the list. Navigation works like Google Earth — drag the ground itself, right-drag to tilt, scroll to zoom in on whatever is under the cursor.</p>
+    <h2>Bot Crossing${BETA_BRANDING ? ' — BETA' : ''}</h2>
+    <p class="sub">${BETA_BRANDING ? HELP_SUB_BETA : HELP_SUB_LIVE}</p>
     <div class="cols">
       <div>
         <div class="k"><span>Drag the ground</span><kbd>drag</kbd></div>
@@ -1186,6 +1238,10 @@ const TEMPLATE = `
       <div class="legend-row"><i class="badge" style="background:#16301f;color:#7fd39a">⚒</i> running right now, building</div>
       <div class="legend-row"><i class="badge" style="background:#332b12;color:#e6c67f">✓</i> its pull request landed</div>
       <div class="legend-row"><i class="badge" style="background:#1d1f2e;color:#a9a8c0">z</i> nothing for three days</div>
+      <div class="legend-row"><i class="badge" style="background:#0f2a1c;color:#4be08a">◆</i> BETA: spinning diamond — a working bot's claimed task</div>
+      <div class="legend-row"><i class="badge" style="background:#3a0f0f;color:#ff6a6a">▮</i> BETA: red light pillar — a blocked bot in distress</div>
+      <div class="legend-row"><i class="badge" style="background:#1c2436;color:#9fb4d8">⌂</i> BETA: home desk — every bot has a desk it returns to</div>
+      <div class="legend-row"><i class="badge" style="background:#10233a;color:#6fb7d8">≈</i> BETA: terrain — hills, valleys, ponds; bright plots are live, dim plots are dormant</div>
     </div>
     <div style="margin-top:18px;display:flex;justify-content:flex-end">
       <button class="btn primary" id="btn-help-close">Got it</button>

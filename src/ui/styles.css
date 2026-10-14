@@ -1222,6 +1222,18 @@ body {
   font-weight: 600;
 }
 
+/* Persistent tier/quality indicator: bottom-right, always on, mirrors .fps. */
+.tier-chip {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  padding: 7px 11px;
+  font-size: 11.5px;
+  font-variant-numeric: tabular-nums;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 /* ── help ────────────────────────────────────────────────────────────────────────── */
 
 .help {
@@ -1569,3 +1581,56 @@ kbd {
   }
 }
 .bot-crossing-canvas { cursor: grab; }
+
+/* ── BETA chrome ─────────────────────────────────────────────────────────── */
+.beta-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 7px 12px;
+  font: 600 13px/1.4 system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color: #ffe9a8;
+  background: repeating-linear-gradient(
+    -45deg,
+    #7a1f1f 0px,
+    #7a1f1f 14px,
+    #5c1414 14px,
+    #5c1414 28px
+  );
+  border-bottom: 2px solid #ffb340;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+.beta-banner strong {
+  letter-spacing: 0.06em;
+  color: #fff;
+}
+.beta-banner a {
+  color: #ffd970;
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.beta-banner a:hover {
+  color: #fff;
+}
+.thread-pop .beta-detail {
+  margin: 8px 0 2px;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #c8cede;
+}
+.thread-pop .beta-line + .beta-line {
+  margin-top: 4px;
+}
+.thread-pop .beta-line b {
+  color: #eef1f8;
+}
+.thread-pop .beta-distress {
+  color: #ffb3b3;
+}

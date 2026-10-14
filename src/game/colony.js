@@ -15,8 +15,8 @@ import {
   allocateCells,
   shipPosition,
   createLabel,
-  createTileLabel,
-  agentTileLabel,
+  createAgentLabel,
+  agentLabelText,
   hashString,
   worldToHex,
   DECK_TOP,
@@ -32,6 +32,18 @@ import { MAX_AGENT_CAP } from '../core/settings.js'
 import { Particles } from '../agents/particles.js'
 import { Navigation } from '../agents/navigation.js'
 import { liveThreadsForColony } from './hidden-projects.js'
+import { BETA } from '../beta/config.js'
+import {
+  betaHeightAt,
+  betaRawHeight,
+  betaDeckTopFor,
+  betaSetAnchors,
+  buildBetaTerrain,
+  buildBetaWater,
+  BETA_WATER_LEVEL,
+} from '../beta/terrain.js'
+import { BetaOverlays } from '../beta/overlays.js'
+import { agentLabelNear } from '../agents/agent-tiers.js'
 
 /**
  * The colony: everything that turns a list of agent threads into a place.
@@ -65,8 +77,11 @@ const TRAVEL_RADIUS = 0.12
 const LIVE_GROWTH = 0.004
 /** How many zones' positions to remember, including repos with nothing running in them. */
 const LAYOUT_MEMORY = 80
-/** How high an agent tile's label floats above the deck: clear of its bot's head. */
-const TILE_LABEL_Y = DECK_TOP + 2.15
+/**
+ * How high an agent's name plate floats above the ground it stands on. A bot is
+ * ~1.5 units tall, so 2.3 clears its head with room for the plate itself (0.30).
+ */
+const AGENT_LABEL_HEIGHT = 2.3
 
 export const STATUS_ORDER = ['blocked', 'waiting', 'working', 'celebrating', 'idle', 'sleeping']
 
@@ -178,7 +193,7 @@ export class Colony {
     this.fauna = new Fauna(scene, settings)
     this.reflections = new SceneryReflections({
       scene, renderer, settings, sky: this.sky, astronauts: this.astronauts,
-      excluded: () => [this.labelGroup, this.indicators.mesh, this.particles.points,
+      excluded: () => [this.labelGroup, this.agentLabelGroup, this.indicators.mesh, this.particles.points,
         this.fauna.group, this.grass?.mesh],
     })
     /** Set by whoever owns the speakers: (name, x, y, z) for a sound the world just made. */
@@ -189,13 +204,12 @@ export class Colony {
     this.plotGroup = new THREE.Group()
     this.labelGroup = new THREE.Group()
     scene.add(this.plotGroup, this.labelGroup)
-    /**
-     * One small billboard per agent tile, keyed `agent:<thread id>`. Cached across
-     * polls — a label is only rebuilt when its agent's name changes — and disposed
-     * when its agent leaves the roster. Lives in `labelGroup`, so the reflections
-     * pass already excludes it and the HUD dismiss already hides it.
-     */
-    this.tileLabels = new Map()
+    // Per-agent name plates live in their own group so the proximity gate can
+    // hide them without touching the stack HQ plates in labelGroup.
+    this.agentLabelGroup = new THREE.Group()
+    scene.add(this.agentLabelGroup)
+    /** `agent:<id>` → billboarded name-plate mesh. Cached, never rebuilt per frame. */
+    this.agentLabels = new Map()
 
     // Dismissing the HUD has to survive a poll: labels are chrome, and a scan landing while
     // everything is hidden must not quietly put them back on screen.
@@ -206,6 +220,19 @@ export class Colony {
     this._c = new THREE.Color()
     this._c2 = new THREE.Color()
     this.stats = { agents: 0, projects: 0, working: 0, waiting: 0, blocked: 0, done: 0 }
+
+    // BETA: per-cell deck heights (each plot's slab sits on its own hill), the
+    // flatten anchors the terrain mesh is built from, and the overlay layer
+    // (claim markers, distress beacons, home desks, status rings).
+    this.betaDeckHeights = new Map()
+    this._betaTerrainSig = null
+    if (BETA) {
+      this.betaOverlays = new BetaOverlays(
+        scene,
+        (x, z) => this.groundAt(x, z),
+        (thread) => this.plots.get(thread?.project)?.accent ?? 0xffffff
+      )
+    }
 
     this._buildTerrain()
   }
@@ -225,7 +252,11 @@ export class Colony {
 
     // An island world is shaped around the colony: the coast has to know the cells first.
     if (this.planet.shape === 'island') setIslandFootprint(this._footprintCells(), PLOT_CELL)
-    this.terrain = createTerrain(this.planet, this.settings.get('groundDetail'))
+    // BETA: real topography replaces the planet's gentle terrain mesh. The
+    // colony's own terrain is still the fallback for the non-beta build.
+    this.terrain = BETA
+      ? buildBetaTerrain()
+      : createTerrain(this.planet, this.settings.get('groundDetail'))
     this.worldGroup.add(this.terrain)
     this._buildIsland()
     this._buildWater()
@@ -235,7 +266,9 @@ export class Colony {
     // cell, but the height of that spot is the planet's, so it is set here rather than once
     // at construction — a world with more relief would otherwise leave it hovering.
     const ship = shipPosition()
-    this.ship.group.position.y = terrainHeight(ship.x, ship.z, this.planet)
+    this.ship.group.position.y = BETA
+      ? betaHeightAt(ship.x, ship.z)
+      : terrainHeight(ship.x, ship.z, this.planet)
 
     this._dustTint.set(this.planet.ground.high)
 
@@ -287,7 +320,7 @@ export class Colony {
     // builds is switched off, because this island is not round — see `_syncIslandRock`.
     this.island = createSkyIsland({
       planet: this.planet,
-      heightAt: (x, z) => terrainHeight(x, z, this.planet),
+      heightAt: (x, z) => (BETA ? betaHeightAt(x, z) : terrainHeight(x, z, this.planet)),
       rimRadius: this._footprintRadius() + 6,
       quality: detail === 'high' ? 'high' : detail === 'low' ? 'low' : 'medium',
     })
@@ -365,6 +398,13 @@ export class Colony {
       this.water.dispose()
       this.water = null
     }
+    // BETA: the beta water plane (ponds + sea at the beta water level) instead
+    // of the planet's own water.
+    if (BETA) {
+      this.water = buildBetaWater()
+      this.worldGroup.add(this.water.mesh)
+      return
+    }
     const detail = this.settings.get('groundDetail')
     this.water = createWater({
       planet: this.planet,
@@ -377,6 +417,11 @@ export class Colony {
   /** A ring on the water at a point, if there is water there. Safe to call anywhere. */
   ripple(x, z, strength = 1) {
     if (!this.water) return
+    if (BETA) {
+      if (betaHeightAt(x, z) >= BETA_WATER_LEVEL) return
+      this.water.ripple(x, z, strength)
+      return
+    }
     if (terrainHeight(x, z, this.planet) >= this.planet.water.level) return
     this.water.ripple(x, z, strength)
   }
@@ -403,7 +448,15 @@ export class Colony {
     }
     const ship = shipPosition()
     clear.push({ x: ship.x, z: ship.z, r: 7.5 })
-    this.scatterGroup = createScatter(this.planet, this.settings.get('scatterDensity'), clear, 4242, (x, z) => this.onIsland(x, z))
+    // BETA: scatter stands on the beta terrain, not the planet's gentle field.
+    this.scatterGroup = createScatter(
+      this.planet,
+      this.settings.get('scatterDensity'),
+      clear,
+      4242,
+      (x, z) => this.onIsland(x, z),
+      BETA ? (x, z) => betaHeightAt(x, z) : null
+    )
     this.worldGroup.add(this.scatterGroup)
     this._scatterFootprint = this._plotFootprint()
     this._buildGrass(clear)
@@ -424,7 +477,7 @@ export class Colony {
     const detail = this.settings.get('groundDetail')
     this.grass = createGrass({
       planet: this.planet,
-      heightAt: (x, z) => terrainHeight(x, z, this.planet),
+      heightAt: (x, z) => (BETA ? betaHeightAt(x, z) : terrainHeight(x, z, this.planet)),
       blocked: (x, z) => !this.onIsland(x, z) ||
         this.plotOrder.some((plot) => plot.containsWorld(x, z, -0.4)) ||
         (apron && (x - apron.x) ** 2 + (z - apron.z) ** 2 < apron.r * apron.r),
@@ -631,9 +684,9 @@ export class Colony {
     }
     this._rebuildNavigation()
     this._syncFaunaSites()
-    this._syncTileLabels(roster)
     this.stats = { ...stats, done: stats.celebrating }
     this.astronauts.setRoster(roster, this._world())
+    this._syncAgentLabels()
     return this.stats
   }
 
@@ -704,6 +757,45 @@ export class Colony {
     for (const plot of this.plotOrder) {
       for (const cell of plot.cells) this.deckedCells.add(`${cell.q},${cell.r}`)
     }
+    // BETA: seat every plot on the terrain. Each plot's slab lifts to its own
+    // deck height (raw ground at its centre + a terrace), its label and camera
+    // aim rise with it, and the terrain mesh flattens under it. The terrain
+    // is rebuilt only when the footprint actually changed.
+    if (BETA) {
+      this.betaDeckHeights = new Map()
+      const anchors = []
+      for (const plot of this.plotOrder) {
+        const deckTop = betaDeckTopFor(plot.center.x, plot.center.z)
+        const lift = deckTop - DECK_TOP
+        plot.betaLift = lift
+        plot.group.position.y = lift
+        plot.middle.y = lift
+        if (plot.label) plot.label.position.y = 3.2 + lift
+        for (const cell of plot.cells) {
+          this.betaDeckHeights.set(`${cell.q},${cell.r}`, deckTop)
+        }
+        anchors.push({
+          x: plot.center.x,
+          z: plot.center.z,
+          radius: plot.radius + 2,
+          deckTop,
+        })
+      }
+      // Level the lander's pad too, so the ship never stands on a slope.
+      const ship = shipPosition()
+      anchors.push({
+        x: ship.x,
+        z: ship.z,
+        radius: 8,
+        deckTop: betaRawHeight(ship.x, ship.z) + 0.55,
+      })
+      betaSetAnchors(anchors)
+      const sig = this._plotFootprint()
+      if (sig !== this._betaTerrainSig) {
+        this._betaTerrainSig = sig
+        this._buildTerrain()
+      }
+    }
     this._syncLabels()
   }
 
@@ -725,6 +817,14 @@ export class Colony {
   }
 
   groundAt(x, z) {
+    // BETA: on a plot, the ground is that plot's own deck height (its slab
+    // sits on its hill); everywhere else it is the beta height field.
+    if (BETA) {
+      const cell = worldToHex(x, z)
+      const deck = this.betaDeckHeights?.get(`${cell.q},${cell.r}`)
+      if (deck !== undefined) return deck
+      return betaHeightAt(x, z)
+    }
     const cell = worldToHex(x, z)
     if (this.deckedCells?.has(`${cell.q},${cell.r}`)) return DECK_TOP
     return terrainHeight(x, z, this.planet)
@@ -733,6 +833,7 @@ export class Colony {
   /** The surface anything floating or falling meets: the water where there is water, else the ground. */
   surfaceAt(x, z) {
     const ground = this.groundAt(x, z)
+    if (BETA) return ground < BETA_WATER_LEVEL ? BETA_WATER_LEVEL : ground
     const level = this.planet.water?.level
     return level !== undefined && ground < level ? level : ground
   }
@@ -787,55 +888,6 @@ export class Colony {
     entry.accent = plot.accent
     entry.retiring = false
     return entry
-  }
-
-  /**
-   * One small label per agent tile, anchored to the tile's slot position.
-   *
-   * Cached by agent id: a poll that changes nothing moves nothing, and a label is
-   * only remade when its agent's name changes (the text is baked into the canvas
-   * at creation). Agents that left the roster lose their labels; agents whose
-   * plot was rebuilt get their labels repositioned to the new slot.
-   */
-  _syncTileLabels(roster) {
-    const wanted = new Map()
-    for (const entry of roster) {
-      const thread = entry.thread
-      const plot = this.plots.get(thread.project)
-      wanted.set(`agent:${thread.id}`, {
-        text: agentTileLabel(thread),
-        accent: plot?.accent ?? 0x9a9aa2,
-        plot: thread.project,
-        x: entry.site.x,
-        z: entry.site.z,
-      })
-    }
-
-    for (const [key, label] of this.tileLabels) {
-      if (wanted.has(key)) continue
-      this.labelGroup.remove(label)
-      label.userData.dispose?.()
-      this.tileLabels.delete(key)
-    }
-
-    for (const [key, spec] of wanted) {
-      let label = this.tileLabels.get(key)
-      if (label && label.userData.tileText !== spec.text) {
-        this.labelGroup.remove(label)
-        label.userData.dispose?.()
-        label = null
-      }
-      if (!label) {
-        label = createTileLabel(spec.text, spec.accent)
-        label.userData.tileText = spec.text
-        label.userData.tileKey = key
-        label.userData.baseY = TILE_LABEL_Y
-        this.tileLabels.set(key, label)
-        this.labelGroup.add(label)
-      }
-      label.userData.tilePlot = spec.plot
-      label.position.set(spec.x, TILE_LABEL_Y, spec.z)
-    }
   }
 
   _removeBuilding(id, entry) {
@@ -1051,11 +1103,10 @@ export class Colony {
   setPlotLift(name, dy) {
     const plot = this.plots.get(name)
     if (!plot) return
-    plot.group.position.y = dy
-    if (plot.label) plot.label.position.y = 3.2 + dy
-    for (const label of this.tileLabels.values()) {
-      if (label.userData.tilePlot === name) label.position.y = (label.userData.baseY ?? TILE_LABEL_Y) + dy
-    }
+    // BETA: a dragged plot keeps its terrain lift underneath the drag offset.
+    const base = plot.betaLift || 0
+    plot.group.position.y = base + dy
+    if (plot.label) plot.label.position.y = 3.2 + base + dy
     const faded = dy > 0
     plot.group.traverse((o) => {
       if (!o.isMesh) return
@@ -1063,32 +1114,91 @@ export class Colony {
       o.material.opacity = faded ? 0.55 : 1
     })
     for (const entry of this.buildings.values()) {
-      if (entry.plot === name) entry.mesh.position.y = DECK_TOP + dy
+      if (entry.plot === name) entry.mesh.position.y = DECK_TOP + base + dy
     }
   }
 
   /**
    * Names fade in for the plots that have something going on, and for whichever one you are
-   * pointing at — and every tile stays identifiable in the meantime. Stack (HQ) labels
-   * sit at a readable baseline instead of vanishing on quiet plots, because a quiet
-   * stack's HQ tile still needs its name; agent tile labels sit at a slightly
-   * quieter baseline so ~190 of them read as texture rather than shouting, and the
-   * selected agent's tile goes full bright. The `showLabels` toggle still hides
-   * every label at once.
+   * pointing at. Everywhere else the colony stays unlabelled.
    */
   _updateLabels(dt) {
     const show = this.uiVisible && this.settings.get('showLabels')
     for (const plot of this.plotOrder) {
       const label = plot.label
       if (!label) continue
-      const wanted = show ? (this.activePlots.has(plot.id) || this.hoveredPlot === plot ? 1 : 0.6) : 0
+      const wanted = show && (this.activePlots.has(plot.id) || this.hoveredPlot === plot) ? 1 : 0
       const next = THREE.MathUtils.damp(label.material.opacity, wanted, 9, dt)
       label.material.opacity = next
       label.visible = next > 0.01
     }
-    const selectedId = this.astronauts.selected?.id
-    for (const [key, label] of this.tileLabels) {
-      const wanted = show ? (selectedId && key === `agent:${selectedId}` ? 1 : 0.85) : 0
+  }
+
+  /**
+   * One name plate per agent, cached by agent id: a poll that changes nothing
+   * moves nothing, and a plate is only remade when its agent's name changes (the
+   * text is baked into the canvas at creation). Agents that left the roster lose
+   * their plates. The plate follows its bot — beta bots wander off their home
+   * tile — and the proximity gate in `_updateAgentLabels` decides whether it shows.
+   */
+  _syncAgentLabels() {
+    const wanted = new Map()
+    for (const agent of this.astronauts.agents) {
+      wanted.set(`agent:${agent.id}`, {
+        text: agentLabelText(agent.thread),
+        accent: this.plots.get(agent.thread?.project)?.accent ?? 0x9a9aa2,
+      })
+    }
+
+    for (const [key, label] of this.agentLabels) {
+      if (wanted.has(key)) continue
+      this.agentLabelGroup.remove(label)
+      label.userData.dispose?.()
+      this.agentLabels.delete(key)
+    }
+
+    for (const [key, spec] of wanted) {
+      let label = this.agentLabels.get(key)
+      if (label && label.userData.agentText !== spec.text) {
+        this.agentLabelGroup.remove(label)
+        label.userData.dispose?.()
+        label = null
+      }
+      if (!label) {
+        label = createAgentLabel(spec.text, spec.accent)
+        label.userData.agentText = spec.text
+        label.userData.agentKey = key
+        label.userData.labelNear = false
+        this.agentLabels.set(key, label)
+        this.agentLabelGroup.add(label)
+      }
+    }
+  }
+
+  /**
+   * Agent name plates are proximity-gated: hidden until the camera is close, so
+   * the map stays readable at overview zoom and names appear only when you lean
+   * in to a bot. Follows the tier gate (near-tier bots get plates; tiers off
+   * falls back to the same distance band — see agentLabelNear). Stack HQ plates
+   * are untouched by this gate; `showLabels` still hides every label at once.
+   */
+  _updateAgentLabels(dt) {
+    const show = this.uiVisible && this.settings.get('showLabels')
+    const tiersOn = this.settings.get('agentTiers') !== false
+    const camPos = this.camera?.position
+    for (const agent of this.astronauts.agents) {
+      const label = this.agentLabels.get(`agent:${agent.id}`)
+      if (!label) continue
+      // Follow the bot; groundY keeps the plate steady while the bot hops.
+      label.position.set(agent.pos.x, (agent.groundY ?? agent.pos.y) + AGENT_LABEL_HEIGHT, agent.pos.z)
+      const near = agentLabelNear({
+        tiersOn,
+        tier: this.astronauts.tierOf(agent),
+        distance: camPos ? camPos.distanceTo(agent.pos) : Infinity,
+        prevNear: label.userData.labelNear ?? false,
+      })
+      label.userData.labelNear = near
+      const wanted = show && near ? 1 : 0
       const next = THREE.MathUtils.damp(label.material.opacity, wanted, 9, dt)
       label.material.opacity = next
       label.visible = next > 0.01
@@ -1109,9 +1219,22 @@ export class Colony {
     this.ship.update(dt, elapsed, night)
 
     this._growBuildings(dt)
-    this.astronauts.update(dt, elapsed)
+    this.astronauts.update(dt, elapsed, this.camera?.position)
     this.astronauts.updateRings(elapsed)
-    this.indicators.update(this.astronauts.agents, elapsed, (a) => this._badgeFor(a))
+    // Tiered rendering: badges are per-bot labels, and the labels toggle only
+    // ever shows them for near-tier bots. Far/mid bots keep their status
+    // readable as colour on their tier mesh — they just do not get a badge.
+    // (Stale badgeSize on a bot that left the near tier would leave a phantom
+    // pick bubble, so it is cleared explicitly for every non-near bot.)
+    const allAgents = this.astronauts.agents
+    const tiersOn = this.settings.get('agentTiers') !== false
+    const badgeAgents = tiersOn
+      ? allAgents.filter((a) => this.astronauts.tierOf(a) === 'near')
+      : allAgents
+    if (tiersOn) for (const a of allAgents) if (this.astronauts.tierOf(a) !== 'near') a.badgeSize = 0
+    this.indicators.update(badgeAgents, elapsed, (a) => this._badgeFor(a))
+    // BETA: claim markers, distress beacons, home desks, status rings.
+    this.betaOverlays?.sync(this.astronauts.agents, elapsed)
     this._emit(dt, elapsed)
     this._emitMotes(dt, night)
     this.particles.ambient(dt, this.camera, this.planet, night, (x, z) => this.surfaceAt(x, z))
@@ -1130,6 +1253,7 @@ export class Colony {
     this._updatePlots(night, elapsed)
     this._updateScaffolds()
     this._updateLabels(dt)
+    this._updateAgentLabels(dt)
     this.reflections.update(dt, focus || this.sky.focus, this.camera)
   }
 
@@ -1285,7 +1409,17 @@ export class Colony {
 
   _updatePlots(night, elapsed) {
     const urgent = this.urgentPlots
-    for (const plot of this.plotOrder) plot.setNight(night, urgent?.has(plot.id) ?? false, elapsed)
+    for (const plot of this.plotOrder) {
+      // BETA: activity as a place — live stacks read bright, dormant ones sit
+      // quiet and dim. Urgent plots still get the full pulse.
+      if (BETA) {
+        const st = this._projectState?.get(plot.id)
+        const f = urgent?.has(plot.id) ? 1 : st?.live ? 0.9 : st?.active ? 0.7 : 0.35
+        plot.setBetaActivity?.(f, night, urgent?.has(plot.id) ?? false, elapsed)
+        continue
+      }
+      plot.setNight(night, urgent?.has(plot.id) ?? false, elapsed)
+    }
   }
 
   /** Which buildings have scaffolding up right now, and where its poles stand. */
@@ -1329,6 +1463,11 @@ export class Colony {
     return this.astronauts.pick(this.camera, ndcX, ndcY, aspect)
   }
 
+  /** HUD readout for the tier chip: { enabled, near, mid, far }. */
+  tierStats() {
+    return this.astronauts.tierStats()
+  }
+
   agentFor(id) {
     return this.astronauts.byId.get(id)
   }
@@ -1359,7 +1498,8 @@ export class Colony {
     disposeTree(this.worldGroup)
     disposeTree(this.plotGroup)
     disposeTree(this.labelGroup)
-    this.scene.remove(this.worldGroup, this.plotGroup, this.labelGroup)
+    disposeTree(this.agentLabelGroup)
+    this.scene.remove(this.worldGroup, this.plotGroup, this.labelGroup, this.agentLabelGroup)
   }
 }
 

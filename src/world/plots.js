@@ -7,6 +7,7 @@ import { withCurve } from '../core/curve.js'
 import { OVERLAY_LAYER } from '../core/engine.js'
 import { BUILDING_RADIUS } from './buildings.js'
 import { HEX_DIRS, SHIP_CELL, ORIGIN, POOL_RINGS, cellKey as key, hexDistance, isConnected } from './plot-move.js'
+import { BETA } from '../beta/config.js'
 
 /**
  * Project plots — the fenced-off sections of the map, one per repo.
@@ -54,8 +55,11 @@ export const DECK_TOP = 0.45
  *
  * Buried by definition, so it only has to reach past the lowest ground a plot can be dealt;
  * it is never the surface anything is measured from. That is still `DECK_TOP`.
+ *
+ * BETA: slabs sit on real hills now, and the ground falls away past a plot's edge, so the
+ * skirt is deep enough to read as a mesa side instead of a floating tile.
  */
-const DECK_SKIRT = 0.4
+const DECK_SKIRT = BETA ? 3.4 : 0.4
 /** The whole prism: the rim you can see, plus the skirt buried under it. */
 const DECK_HEIGHT = DECK_TOP + DECK_SKIRT
 /** Building slots per cell: one in the middle and six around it. */
@@ -385,10 +389,18 @@ export class Plot {
     // Where the camera aims and where the name plate goes: the middle of the whole zone,
     // so an L-shaped blob is framed as one place rather than from its corner.
     this.middle = new THREE.Vector3(sx / cells.length, 0, sz / cells.length)
-    // The name plate sits over the HQ tile (the root cell, slot 0) rather than the
-    // middle of the zone, so the stack's label identifies the HQ tile itself.
-    // Camera framing still uses `middle` above, which is the whole zone.
-    this.labelAnchor = new THREE.Vector3(origin.x, 0, origin.z)
+    let anchor = this.localCenters[0]
+    let anchorD = Infinity
+    for (const p of this.localCenters) {
+      const dx = p.x - (this.middle.x - origin.x)
+      const dz = p.z - (this.middle.z - origin.z)
+      const d = dx * dx + dz * dz
+      if (d < anchorD) {
+        anchorD = d
+        anchor = p
+      }
+    }
+    this.labelAnchor = new THREE.Vector3(this.center.x + anchor.x, 0, this.center.z + anchor.z)
     this.radius = CELL * Math.sqrt(cells.length)
 
     this.group = new THREE.Group()
@@ -429,6 +441,9 @@ export class Plot {
     // as in full sun the edge reads as one stop darker, and a backdrop that goes to nothing
     // at the plot boundary just looks like a hole.
     const color = new THREE.Color(this.accent).offsetHSL(0, -0.38, 0).multiplyScalar(0.9)
+    // BETA: the deck's base colour, so activity dimming can scale it per frame
+    // without drifting (multiplying the already-dimmed colour would fade to black).
+    this._deckBase = color.clone()
     const plate = deckSurface()
     this.deck = new THREE.Mesh(
       geo,
@@ -641,7 +656,9 @@ export class Plot {
 
   worldSlot(index, out = new THREE.Vector3()) {
     const s = this.slotFor(index)
-    return out.set(this.center.x + s.x, DECK_TOP, this.center.z + s.z)
+    // BETA: slots ride on the plot's terrain lift, so a bot's home tile, its
+    // HQ building and its boots all agree on the deck height.
+    return out.set(this.center.x + s.x, DECK_TOP + (this.betaLift || 0), this.center.z + s.z)
   }
 
   /** Night lighting, plus a pulse on the border when this plot holds something urgent. */
@@ -651,6 +668,22 @@ export class Plot {
         0.3 + night * 1.4 + (urgent ? 0.4 + Math.sin(elapsed * 3.4) * 0.32 : 0)
     }
     this.lampMaterial.color.copy(this._lampBase).multiplyScalar(0.5 + night * 2.4)
+  }
+
+  /**
+   * BETA: activity as a place. `f` is 1 for a plot holding something urgent,
+   * ~0.9 for a live stack, ~0.7 for one waiting on you, ~0.35 for a dormant
+   * one. Live plots stay bright; dormant ones sit quiet and dim — the map
+   * reads at a glance. Built on setNight so the urgent pulse survives.
+   */
+  setBetaActivity(f, night, urgent, elapsed) {
+    this.setNight(night, urgent, elapsed)
+    if (this.deck?.material && this._deckBase) {
+      this.deck.material.color.copy(this._deckBase).multiplyScalar(0.45 + 0.55 * f)
+    }
+    if (this.borderMaterial) {
+      this.borderMaterial.emissiveIntensity *= 0.45 + 0.55 * f
+    }
   }
 
   dispose() {
@@ -670,15 +703,16 @@ export class Plot {
  * shader, so they stay upright and legible from any camera angle without a per-frame
  * lookAt on the CPU.
  *
- * `options` tunes the plate without changing the shared drawing code: plot labels use
- * the defaults, per-tile labels pass the small variant (see `createTileLabel`).
+ * `opts` overrides the plate geometry (defaults = the project plate). Agent plates
+ * pass the compact variant via `createAgentLabel`, so ~190 of them can share the
+ * colony without shouting.
  */
-export function createLabel(text, accent, pixelRatio = 4, options = {}) {
-  const fontSize = options.fontSize ?? 34
+export function createLabel(text, accent, pixelRatio = 4, opts = {}) {
+  const fontSize = opts.fontSize ?? 34
   const font = `500 ${fontSize}px ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif`
-  const dot = options.dot ?? 9
-  const gap = options.gap ?? 10
-  const pad = options.pad ?? 14
+  const dot = opts.dot ?? 9
+  const gap = opts.gap ?? 10
+  const pad = opts.pad ?? 14
 
   const measure = document.createElement('canvas').getContext('2d')
   measure.font = font
@@ -705,19 +739,15 @@ export function createLabel(text, accent, pixelRatio = 4, options = {}) {
   c.shadowBlur = 9
   c.fillStyle = 'rgba(0,0,0,0.9)'
   for (let i = 0; i < 3; i++) c.fillText(text, textX, midY) // build the halo up in passes
-  if (dot > 0) {
-    c.beginPath()
-    c.arc(pad + dot / 2, midY, dot / 2, 0, Math.PI * 2)
-    c.fill()
-  }
+  c.beginPath()
+  c.arc(pad + dot / 2, midY, dot / 2, 0, Math.PI * 2)
+  c.fill()
 
   c.shadowBlur = 0
-  if (dot > 0) {
-    c.fillStyle = '#' + new THREE.Color(accent).getHexString()
-    c.beginPath()
-    c.arc(pad + dot / 2, midY, dot / 2, 0, Math.PI * 2)
-    c.fill()
-  }
+  c.fillStyle = '#' + new THREE.Color(accent).getHexString()
+  c.beginPath()
+  c.arc(pad + dot / 2, midY, dot / 2, 0, Math.PI * 2)
+  c.fill()
   c.fillStyle = '#f4f2ee'
   c.fillText(text, textX, midY)
 
@@ -731,7 +761,7 @@ export function createLabel(text, accent, pixelRatio = 4, options = {}) {
   texture.generateMipmaps = true
   texture.anisotropy = 8
 
-  const height = options.height ?? 0.56
+  const height = opts.height ?? 0.56
   const geo = new THREE.PlaneGeometry(height * (w / h), height)
   const mat = new THREE.MeshBasicMaterial({
     map: texture,
@@ -772,24 +802,21 @@ export function createLabel(text, accent, pixelRatio = 4, options = {}) {
 }
 
 /**
- * The text on an agent's tile label: the agent's name straight from the roster data
- * (`title` is the roster `name`; `agent_role` is the short role). The name is used
- * rather than the role because the role alone is NOT unique inside a stack — eleven
- * Marketing guides would all read "Website Brand Guide" — while the name is.
+ * Display name for one agent's plate: the thread title, falling back to name/id.
+ * Same fallback chain as the detail card, so a plate never renders blank.
  */
-export function agentTileLabel(thread) {
-  return thread.title || thread.name || thread.id
+export function agentLabelText(thread) {
+  return thread?.title || thread?.name || thread?.id || 'Untitled thread'
 }
 
 /**
- * One agent's tile label: the same billboarded plate as a project label, smaller and
- * without the accent dot, so ~190 of them can share the colony without shouting.
- * Anchored to the agent's tile (its slot position), NOT to the bot — the bot wanders
- * off its tile while it potters, and the label has to keep identifying the tile.
+ * One agent's name plate: the same billboarded plate as a project label, smaller
+ * and without the accent dot, so ~190 of them can share the colony without shouting.
  * Height 0.30 keeps even the longest roster name (~58 chars) under the ~4.4-unit
- * spacing between neighbouring slots.
+ * spacing between neighbouring tiles. The plate follows its bot (beta bots wander
+ * off their home tile) and is proximity-gated by the colony — see agentLabelNear.
  */
-export function createTileLabel(text, accent) {
+export function createAgentLabel(text, accent) {
   return createLabel(text, accent, 4, { height: 0.30, fontSize: 26, dot: 0, gap: 0, pad: 10 })
 }
 

@@ -979,7 +979,7 @@ function fallbackShapes(isFlora) {
  * same planet always looks the same, and all kept clear of the plots, the walkways and
  * — where there is any — the water, unless a part is meant to stand in it.
  */
-export function createScatter(planet, density, keepClear = [], seed = 4242, inside = null) {
+export function createScatter(planet, density, keepClear = [], seed = 4242, inside = null, heightAt = null) {
   const group = new THREE.Group()
   group.name = 'scatter'
   // Islands have much less usable ground. Concentrate a smaller budget into groves.
@@ -1062,7 +1062,7 @@ export function createScatter(planet, density, keepClear = [], seed = 4242, insi
     const slot = fill[which]
     if (slot >= mesh.instanceMatrix.count) continue
 
-    const y = sampleY(x, z, planet, seed)
+    const y = heightAt ? heightAt(x, z) : sampleY(x, z, planet, seed)
     if (level !== undefined) {
       const above = y - level
       const zone = kind.zone || 'land'

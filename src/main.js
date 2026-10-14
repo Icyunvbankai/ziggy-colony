@@ -25,6 +25,7 @@ import {
 } from './game/api.js'
 import { hideProject, hiddenCatalog, unhideProject } from './game/hidden-projects.js'
 import { withErrands } from './game/errands.js'
+import { BETA, BETA_BRANDING } from './beta/config.js'
 
 /**
  * Boot and the outer game loop.
@@ -41,11 +42,26 @@ const app = document.getElementById('app')
 app.insertAdjacentHTML(
   'beforeend',
   `<div class="boot"><div class="inner">
-     <h1>Bot Crossing</h1>
+     <h1>Bot Crossing ${BETA_BRANDING ? '— BETA' : ''}</h1>
      <p>Scanning for agent threads…</p>
      <div class="bar"><i></i></div>
    </div></div>`
 )
+
+// BETA branding: unmistakable banner, pinned to the top of the screen. This is the
+// test colony — it reads the live colony's public data but is NOT the live
+// colony, and nothing done here changes the live one. Off on live.
+if (BETA_BRANDING) {
+  document.title = 'Bot Crossing — BETA (test colony)'
+  app.insertAdjacentHTML(
+    'afterbegin',
+    `<div class="beta-banner" role="note">
+       <strong>🧪 BETA — TEST COLONY</strong>
+       <span>Not the live colony. Same real agent data, new terrain + overlays. Nothing here changes live.</span>
+       <a href="https://icyunvbankai.github.io/ziggy-colony/" target="_blank" rel="noopener">Live colony ↗</a>
+     </div>`
+  )
+}
 
 const settings = new Settings()
 // A phone gets the light preset the first time: a retina panel at full scale with bloom
@@ -53,10 +69,16 @@ const settings = new Settings()
 // that out by stuttering first.
 const phoneLike = window.matchMedia('(max-width: 600px)').matches || (window.matchMedia('(pointer: coarse)').matches && window.innerWidth < 900)
 if (!hasStoredSettings()) settings.applyPreset(phoneLike ? 'low' : DEFAULT_PRESET)
+// BETA: the day/night cycle drifts on its own (240s per full day) so the
+// lighting, shadows and night lamps show themselves off without any clicks.
+if (BETA && !hasStoredSettings()) settings.set('autoTime', true)
 
 // Before the first material compiles: the bend is patched into three's own shader chunks.
 installWorldCurve()
 const engine = new Engine(settings).mount(app)
+// Tiered agent rendering (Proposal 3, beta): freeze the shadow map; it renders
+// only on explicit request from the tier system (see the frame updater below).
+engine.setTieredShadows(settings.get('agentTiers') !== false)
 engine.setPlanetGrade(PLANETS[settings.get('planet')]?.grade)
 const rig = new CameraRig(engine.camera, engine.canvas, settings)
 const colony = new Colony(engine.scene, settings, engine.camera, engine.renderer)
@@ -317,6 +339,7 @@ function select(id, { fly = false } = {}) {
   const agent = id ? colony.agentFor(id) : null
   if (!agent) {
     selectedId = null
+    colony.astronauts.setForcedNear(null)
     rig.setFollow(null)
     colony.astronauts.setSelected(null)
     hud.setSelection(null, null)
@@ -324,6 +347,8 @@ function select(id, { fly = false } = {}) {
     return
   }
   colony.astronauts.setSelected(agent)
+  // Click-to-focus forces this bot into the near tier while it is selected.
+  colony.astronauts.setForcedNear(agent.id)
   const thread = threads.find((t) => t.id === id) || agent.thread
   hud.setSelection(agent, thread)
   // It answers. One of six little phrases, from where it is standing, never twice in a row.
@@ -1088,6 +1113,7 @@ settings.onChange((changed, scope) => {
   colony.onSettingsChanged(changed, scope)
   if (changed.has('planet')) ambience.setPlanet(colony.planet)
   if (changed.has('showFps')) hud.syncSettings()
+  if (changed.has('agentTiers')) engine.setTieredShadows(settings.get('agentTiers') !== false)
   if (changed.has('followSelected')) rig.setFollow(settings.get('followSelected') ? colony.agentFor(selectedId) : null)
   // Folding dormant repos away changes which threads are on the map, so the colony has to be
   // rebuilt from the list rather than merely re-rendered.
@@ -1096,6 +1122,9 @@ settings.onChange((changed, scope) => {
 })
 
 // ── frame ─────────────────────────────────────────────────────────────────────────────
+
+/** Last elapsed time a sun-driven shadow update was requested (autoTime/clockTime). */
+let lastSunShadowAt = 0
 
 engine.add({
   update(dt, elapsed) {
@@ -1108,6 +1137,24 @@ engine.add({
     // Whatever the camera is orbiting is what should be in focus.
     engine.setFocusDistance(rig.distance)
 
+    // Tiered shadows: the shadow map renders only when the tier system asked
+    // for it (near-set change / near bot moved, throttled upstream), plus at
+    // most once a second while the sun itself is moving (autoTime/clockTime).
+    if (colony.astronauts.shadowDirty) {
+      engine.requestShadowUpdate()
+      colony.astronauts.shadowDirty = false
+    }
+    if (
+      settings.get('agentTiers') !== false &&
+      (settings.get('autoTime') || settings.get('clockTime')) &&
+      elapsed - lastSunShadowAt > 1
+    ) {
+      engine.requestShadowUpdate()
+      lastSunShadowAt = elapsed
+    }
+    const tierStats = colony.tierStats()
+    hud.setTierStats(tierStats)
+
     if (selectedId) {
       hud.updateAvatar(colony.astronauts.faceTexture.image)
       // A selected astronaut that walked off the roster should not keep a stale card open.
@@ -1115,7 +1162,10 @@ engine.add({
       if (!agent) select(null, {})
       else hud.placeCard(screenOf(agent))
     }
-    hud.setFps(engine.perf, engine.viewport, `${colony.astronauts.visibleCount} bots · ${colony.particles.liveCount} bits`)
+    const tierMix = tierStats.enabled
+      ? ` · LOD ${tierStats.near}N/${tierStats.mid}M/${tierStats.far}F`
+      : ' · LOD off'
+    hud.setFps(engine.perf, engine.viewport, `${colony.astronauts.visibleCount} bots · ${colony.particles.liveCount} bits${tierMix}`)
     ambience.update(dt, engine.camera, soundWorld())
   },
 })
