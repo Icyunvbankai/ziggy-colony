@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22.",
+      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22. Verified against live gadget-builds page (https://icyunvbankai.github.io/Bitstream/gadget-builds.html): color TFT clock; time, weather, overnight Muse al",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,9 +12,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1791942592000,
-      "lastActivityAt": 1792011195000,
+      "lastActivityAt": 1792014592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22.",
+      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22. Verified against live gadget-builds page (https://icyunvbankai.github.io/Bitstream/gadget-builds.html): color TFT clock; time, weather, overnight Muse al",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,9 +49,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1791942592000,
-      "lastActivityAt": 1792011195000,
+      "lastActivityAt": 1792014592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22.",
+      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22. Verified against live gadget-builds page (https://icyunvbankai.github.io/Bitstream/gadget-builds.html): color TFT clock; time, weather, overnight Muse al",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,9 +86,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1791942592000,
-      "lastActivityAt": 1792011195000,
+      "lastActivityAt": 1792014592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22.",
+      "preview": "GlitchMobz hourly ad prepared — HOLD, do not post yet — for 2026-10-14 16:49 EDT. Product: Bedside Clock (rotation slot #26, BUILD 06), about $22. Verified against live gadget-builds page (https://icyunvbankai.github.io/Bitstream/gadget-builds.html): color TFT clock; time, weather, overnight Muse al",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,9 +123,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1791942592000,
-      "lastActivityAt": 1792011195000,
+      "lastActivityAt": 1792014592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792014383531,
+  "scannedAt": 1792015002182,
   "warnings": []
 }
