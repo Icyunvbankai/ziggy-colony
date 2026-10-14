@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-glitchmobz-clips-account-lead",
-      "preview": "alternating-hourly-poster run 2026-10-14 18:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); HTTP 429 rate-limit on publish, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 18:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-content-strategist",
-      "preview": "alternating-hourly-poster run 2026-10-14 18:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); HTTP 429 rate-limit on publish, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 18:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-poster",
-      "preview": "alternating-hourly-poster run 2026-10-14 18:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); HTTP 429 rate-limit on publish, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 18:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-analyst",
-      "preview": "alternating-hourly-poster run 2026-10-14 18:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); HTTP 429 rate-limit on publish, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 18:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-qc-agent",
-      "preview": "alternating-hourly-poster run 2026-10-14 18:07 EDT completed with no posts. @glitchmobz_clips was due a clip (caseoh-dookie-cannon.mp4); HTTP 429 rate-limit on publish, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 18:07: 0 posts published; stopped on HTTP 429; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792016100830,
+  "scannedAt": 1792016937136,
   "warnings": []
 }
