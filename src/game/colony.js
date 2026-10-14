@@ -63,6 +63,8 @@ const AGENT_RADIUS = 0.26
 const TRAVEL_RADIUS = 0.12
 /** Progress a live thread adds per second, so a working site visibly grows while you watch. */
 const LIVE_GROWTH = 0.004
+/** How many zones' positions to remember, including repos with nothing running in them. */
+const LAYOUT_MEMORY = 80
 /** How high an agent tile's label floats above the deck: clear of its bot's head. */
 const TILE_LABEL_Y = DECK_TOP + 2.15
 
