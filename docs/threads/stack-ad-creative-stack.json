@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-ad-creative-stack-claim-checker",
-      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted):",
+      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted): AD 1 — GLITCHMOBZ (first, daily): \"NEW CLIPS.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-ad-creative-stack-ad-builder",
-      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted):",
+      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted): AD 1 — GLITCHMOBZ (first, daily): \"NEW CLIPS.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-ad-creative-stack-caption-writer",
-      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted):",
+      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted): AD 1 — GLITCHMOBZ (first, daily): \"NEW CLIPS.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-ad-creative-stack-qc-verifier",
-      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted):",
+      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted): AD 1 — GLITCHMOBZ (first, daily): \"NEW CLIPS.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:stack-ad-creative-stack-repairer",
-      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted):",
+      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted): AD 1 — GLITCHMOBZ (first, daily): \"NEW CLIPS.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -189,7 +189,7 @@
     },
     {
       "id": "muse:agent:stack-ad-creative-stack-qc-re-verifier",
-      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted):",
+      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted): AD 1 — GLITCHMOBZ (first, daily): \"NEW CLIPS.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -226,7 +226,7 @@
     },
     {
       "id": "muse:agent:stack-ad-creative-stack-qc-agent",
-      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted):",
+      "preview": "Site-ads-daily for 2026-10-14 completed. Two ads ready for Adrian's manual posting (never auto-posted): AD 1 — GLITCHMOBZ (first, daily): \"NEW CLIPS.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -262,6 +262,6 @@
       }
     }
   ],
-  "scannedAt": 1792008635518,
+  "scannedAt": 1792009693684,
   "warnings": []
 }
