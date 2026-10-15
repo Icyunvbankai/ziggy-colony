@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-giveaway-ops-ticket-processor",
-      "preview": "Giveaway-ticket-processor 17:12 EDT run completed.",
+      "preview": "Completed giveaway-ticket-processor run (Thu 2026-10-15 17:12:38 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-giveaway-ops-ad-producer",
-      "preview": "Giveaway-ticket-processor 17:12 EDT run completed.",
+      "preview": "Completed giveaway-ticket-processor run (Thu 2026-10-15 17:12:38 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-giveaway-ops-ad-verifier",
-      "preview": "Giveaway-ticket-processor 17:12 EDT run completed.",
+      "preview": "Completed giveaway-ticket-processor run (Thu 2026-10-15 17:12:38 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-giveaway-ops-ad-repairer",
-      "preview": "Giveaway-ticket-processor 17:12 EDT run completed.",
+      "preview": "Completed giveaway-ticket-processor run (Thu 2026-10-15 17:12:38 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:stack-giveaway-ops-entry-counter",
-      "preview": "Giveaway-ticket-processor 17:12 EDT run completed.",
+      "preview": "Completed giveaway-ticket-processor run (Thu 2026-10-15 17:12:38 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -189,7 +189,7 @@
     },
     {
       "id": "muse:agent:stack-giveaway-ops-draw-prep-agent",
-      "preview": "Giveaway-ticket-processor 17:12 EDT run completed.",
+      "preview": "Completed giveaway-ticket-processor run (Thu 2026-10-15 17:12:38 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -226,7 +226,7 @@
     },
     {
       "id": "muse:agent:stack-giveaway-ops-draw-verifier",
-      "preview": "Giveaway-ticket-processor 17:12 EDT run completed.",
+      "preview": "Completed giveaway-ticket-processor run (Thu 2026-10-15 17:12:38 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -263,7 +263,7 @@
     },
     {
       "id": "muse:agent:stack-giveaway-ops-draw-repairer",
-      "preview": "Giveaway-ticket-processor 17:12 EDT run completed.",
+      "preview": "Completed giveaway-ticket-processor run (Thu 2026-10-15 17:12:38 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -300,7 +300,7 @@
     },
     {
       "id": "muse:agent:stack-giveaway-ops-qc-agent",
-      "preview": "Giveaway-ticket-processor 17:12 EDT run completed.",
+      "preview": "Completed giveaway-ticket-processor run (Thu 2026-10-15 17:12:38 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -336,6 +336,6 @@
       }
     }
   ],
-  "scannedAt": 1792098942627,
+  "scannedAt": 1792099449208,
   "warnings": []
 }
