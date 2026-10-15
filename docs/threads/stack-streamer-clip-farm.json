@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "Hourly ad creative completed for @glitchmobz_clips. Product: Briefing Display (item 21/30), ~$56 per the live gadget-builds page (parts sum $56.05) — CORRECTION NEEDED BEFORE POSTING: the generated creative and caption currently show “About $57”; update the badge and caption to ~$56.",
+      "preview": "Hourly ad creative completed for @glitchmobz_clips.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,9 +12,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792064992000,
-      "lastActivityAt": 1792101353000,
+      "lastActivityAt": 1792104592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "Hourly ad creative completed for @glitchmobz_clips. Product: Briefing Display (item 21/30), ~$56 per the live gadget-builds page (parts sum $56.05) — CORRECTION NEEDED BEFORE POSTING: the generated creative and caption currently show “About $57”; update the badge and caption to ~$56.",
+      "preview": "Hourly ad creative completed for @glitchmobz_clips.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,9 +49,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792064992000,
-      "lastActivityAt": 1792101353000,
+      "lastActivityAt": 1792104592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "Hourly ad creative completed for @glitchmobz_clips. Product: Briefing Display (item 21/30), ~$56 per the live gadget-builds page (parts sum $56.05) — CORRECTION NEEDED BEFORE POSTING: the generated creative and caption currently show “About $57”; update the badge and caption to ~$56.",
+      "preview": "Hourly ad creative completed for @glitchmobz_clips.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,9 +86,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792064992000,
-      "lastActivityAt": 1792101353000,
+      "lastActivityAt": 1792104592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "Hourly ad creative completed for @glitchmobz_clips. Product: Briefing Display (item 21/30), ~$56 per the live gadget-builds page (parts sum $56.05) — CORRECTION NEEDED BEFORE POSTING: the generated creative and caption currently show “About $57”; update the badge and caption to ~$56.",
+      "preview": "Hourly ad creative completed for @glitchmobz_clips.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,9 +123,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792064992000,
-      "lastActivityAt": 1792101353000,
+      "lastActivityAt": 1792104592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792103189347,
+  "scannedAt": 1792104848212,
   "warnings": []
 }
