@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT. Read local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 23:54:12 EDT). Identified 159/193 idle agents (82.4%).",
+      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT. Read local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 23:54:12 EDT). Identified 159/193 idle agents (82.4%).",
+      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT. Read local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 23:54:12 EDT). Identified 159/193 idle agents (82.4%).",
+      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT. Read local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 23:54:12 EDT). Identified 159/193 idle agents (82.4%).",
+      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792037004890,
+  "scannedAt": 1792038346581,
   "warnings": []
 }
