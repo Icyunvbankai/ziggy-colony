@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-bitstream-fm-account-lead",
-      "preview": "alternating-hourly-poster 03:07 EDT: 0 posted. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. Fallback to ad 2026-10-15-02 failed with HTTP 429. Run stopped per rule. 14 clips queued.",
+      "preview": "alternating-hourly-poster 03:07 EDT run: 0 posts. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-content-strategist",
-      "preview": "alternating-hourly-poster 03:07 EDT: 0 posted. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. Fallback to ad 2026-10-15-02 failed with HTTP 429. Run stopped per rule. 14 clips queued.",
+      "preview": "alternating-hourly-poster 03:07 EDT run: 0 posts. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-poster",
-      "preview": "alternating-hourly-poster 03:07 EDT: 0 posted. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. Fallback to ad 2026-10-15-02 failed with HTTP 429. Run stopped per rule. 14 clips queued.",
+      "preview": "alternating-hourly-poster 03:07 EDT run: 0 posts. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-analyst",
-      "preview": "alternating-hourly-poster 03:07 EDT: 0 posted. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. Fallback to ad 2026-10-15-02 failed with HTTP 429. Run stopped per rule. 14 clips queued.",
+      "preview": "alternating-hourly-poster 03:07 EDT run: 0 posts. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-qc-agent",
-      "preview": "alternating-hourly-poster 03:07 EDT: 0 posted. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. Fallback to ad 2026-10-15-02 failed with HTTP 429. Run stopped per rule. 14 clips queued.",
+      "preview": "alternating-hourly-poster 03:07 EDT run: 0 posts. @glitchmobz_clips due clip; all 15 queued clips PACKAGING-REJECT (missing .packaged.mp4 sidecars Oct 6-14), left queued. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792048196046,
+  "scannedAt": 1792049308529,
   "warnings": []
 }
