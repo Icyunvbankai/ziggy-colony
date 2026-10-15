@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-whatsapp-shop-ops-drop-picker",
-      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group:",
+      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group: ![Bolt Sun Tee](sandbox://workspace/whatsapp-shop/cards/prod-sun.png) ⚡ TODAY'S DROP: the Bolt Sun Tee — $29 Rising sun, lightning bolt, zero subtlety.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-whatsapp-shop-ops-caption-writer",
-      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group:",
+      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group: ![Bolt Sun Tee](sandbox://workspace/whatsapp-shop/cards/prod-sun.png) ⚡ TODAY'S DROP: the Bolt Sun Tee — $29 Rising sun, lightning bolt, zero subtlety.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-whatsapp-shop-ops-qc-verifier",
-      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group:",
+      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group: ![Bolt Sun Tee](sandbox://workspace/whatsapp-shop/cards/prod-sun.png) ⚡ TODAY'S DROP: the Bolt Sun Tee — $29 Rising sun, lightning bolt, zero subtlety.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-whatsapp-shop-ops-repair",
-      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group:",
+      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group: ![Bolt Sun Tee](sandbox://workspace/whatsapp-shop/cards/prod-sun.png) ⚡ TODAY'S DROP: the Bolt Sun Tee — $29 Rising sun, lightning bolt, zero subtlety.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:stack-whatsapp-shop-ops-re-verifier",
-      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group:",
+      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group: ![Bolt Sun Tee](sandbox://workspace/whatsapp-shop/cards/prod-sun.png) ⚡ TODAY'S DROP: the Bolt Sun Tee — $29 Rising sun, lightning bolt, zero subtlety.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -189,7 +189,7 @@
     },
     {
       "id": "muse:agent:stack-whatsapp-shop-ops-queue-tracker",
-      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group:",
+      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group: ![Bolt Sun Tee](sandbox://workspace/whatsapp-shop/cards/prod-sun.png) ⚡ TODAY'S DROP: the Bolt Sun Tee — $29 Rising sun, lightning bolt, zero subtlety.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -226,7 +226,7 @@
     },
     {
       "id": "muse:agent:stack-whatsapp-shop-ops-qc-agent",
-      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group:",
+      "preview": "Today's shop drop is ready — forward the card + caption to your WhatsApp group: ![Bolt Sun Tee](sandbox://workspace/whatsapp-shop/cards/prod-sun.png) ⚡ TODAY'S DROP: the Bolt Sun Tee — $29 Rising sun, lightning bolt, zero subtlety.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -262,6 +262,6 @@
       }
     }
   ],
-  "scannedAt": 1792072508854,
+  "scannedAt": 1792072734005,
   "warnings": []
 }
