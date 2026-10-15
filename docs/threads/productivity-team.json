@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity cycle 29 completed. Snapshot read at 05:53 EDT: 159 idle / 193 total (82.4%), 6 running (Colony Team), arithmetic 159+6+28=193 verified.",
+      "preview": "Completed productivity-loop run (Thu 2026-10-15 06:25:07 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity cycle 29 completed. Snapshot read at 05:53 EDT: 159 idle / 193 total (82.4%), 6 running (Colony Team), arithmetic 159+6+28=193 verified.",
+      "preview": "Completed productivity-loop run (Thu 2026-10-15 06:25:07 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity cycle 29 completed. Snapshot read at 05:53 EDT: 159 idle / 193 total (82.4%), 6 running (Colony Team), arithmetic 159+6+28=193 verified.",
+      "preview": "Completed productivity-loop run (Thu 2026-10-15 06:25:07 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity cycle 29 completed. Snapshot read at 05:53 EDT: 159 idle / 193 total (82.4%), 6 running (Colony Team), arithmetic 159+6+28=193 verified.",
+      "preview": "Completed productivity-loop run (Thu 2026-10-15 06:25:07 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792060459086,
+  "scannedAt": 1792061062769,
   "warnings": []
 }
