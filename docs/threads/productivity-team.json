@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity Cycle 17 (2026-10-14 23:55 EDT) completed. Snapshot 23:54:12 EDT: 159/193 idle (82.4%); 3 proposals delivered (Material Transformation Layer, Graduated Cooldown Ladder, Duplicate-Safe Publish Ledger).",
+      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT. Read local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 23:54:12 EDT). Identified 159/193 idle agents (82.4%).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity Cycle 17 (2026-10-14 23:55 EDT) completed. Snapshot 23:54:12 EDT: 159/193 idle (82.4%); 3 proposals delivered (Material Transformation Layer, Graduated Cooldown Ladder, Duplicate-Safe Publish Ledger).",
+      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT. Read local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 23:54:12 EDT). Identified 159/193 idle agents (82.4%).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity Cycle 17 (2026-10-14 23:55 EDT) completed. Snapshot 23:54:12 EDT: 159/193 idle (82.4%); 3 proposals delivered (Material Transformation Layer, Graduated Cooldown Ladder, Duplicate-Safe Publish Ledger).",
+      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT. Read local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 23:54:12 EDT). Identified 159/193 idle agents (82.4%).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity Cycle 17 (2026-10-14 23:55 EDT) completed. Snapshot 23:54:12 EDT: 159/193 idle (82.4%); 3 proposals delivered (Material Transformation Layer, Graduated Cooldown Ladder, Duplicate-Safe Publish Ledger).",
+      "preview": "Productivity loop cycle 17 executed for scheduled time 2026-10-14 23:55 EDT. Read local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 23:54:12 EDT). Identified 159/193 idle agents (82.4%).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792036814288,
+  "scannedAt": 1792037004890,
   "warnings": []
 }
