@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-podcast-episode-factory-topic-researcher",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-scriptwriter",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-script-verifier",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-script-repair",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-voice-producer",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -189,7 +189,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-audio-verifier",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -226,7 +226,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-audio-repair",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -263,7 +263,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-publisher",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -300,7 +300,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-distributor",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -337,7 +337,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-final-verifier",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -374,7 +374,7 @@
     },
     {
       "id": "muse:agent:stack-podcast-episode-factory-qc-agent",
-      "preview": "Bitstream distribution 07:37 ET: published the Oct 15 Muse-as-bookkeeper episode to YouTube + Spotify; 252 of 253 recent episodes already had both URLs.",
+      "preview": "Hourly Bitstream distribution sweeper — 2026-10-15 07:37 ET run: DUPLICATE GUARD: checked 253 episode directories in the 14-day window; 252 already had both YouTube and Spotify URLs recorded. One pending slug had no URLs.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -410,6 +410,6 @@
       }
     }
   ],
-  "scannedAt": 1792065049043,
+  "scannedAt": 1792065187133,
   "warnings": []
 }
