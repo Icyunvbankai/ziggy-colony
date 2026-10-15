@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "Hourly ad for @glitchmobz_clips completed for 02:49 EDT run.",
+      "preview": "Hourly ad for @glitchmobz_clips completed for 02:49 EDT run. Product selected from rotation: #6 RayNeo Air 4 Pro, listed price $299 (rotation list dated 2026-10-13; live store page stamps its prices October 12, 2026).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,9 +12,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792010992000,
-      "lastActivityAt": 1792047161000,
+      "lastActivityAt": 1792050592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "Hourly ad for @glitchmobz_clips completed for 02:49 EDT run.",
+      "preview": "Hourly ad for @glitchmobz_clips completed for 02:49 EDT run. Product selected from rotation: #6 RayNeo Air 4 Pro, listed price $299 (rotation list dated 2026-10-13; live store page stamps its prices October 12, 2026).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,9 +49,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792010992000,
-      "lastActivityAt": 1792047161000,
+      "lastActivityAt": 1792050592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "Hourly ad for @glitchmobz_clips completed for 02:49 EDT run.",
+      "preview": "Hourly ad for @glitchmobz_clips completed for 02:49 EDT run. Product selected from rotation: #6 RayNeo Air 4 Pro, listed price $299 (rotation list dated 2026-10-13; live store page stamps its prices October 12, 2026).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,9 +86,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792010992000,
-      "lastActivityAt": 1792047161000,
+      "lastActivityAt": 1792050592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "Hourly ad for @glitchmobz_clips completed for 02:49 EDT run.",
+      "preview": "Hourly ad for @glitchmobz_clips completed for 02:49 EDT run. Product selected from rotation: #6 RayNeo Air 4 Pro, listed price $299 (rotation list dated 2026-10-13; live store page stamps its prices October 12, 2026).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,9 +123,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792010992000,
-      "lastActivityAt": 1792047161000,
+      "lastActivityAt": 1792050592000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792050328525,
+  "scannedAt": 1792050790363,
   "warnings": []
 }
