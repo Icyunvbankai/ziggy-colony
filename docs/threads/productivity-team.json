@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity Cycle 15 complete for 2026-10-14 ~22:55 EDT. Snapshot read: 163/193 idle (84.5%), 6 running, 24 recently active. 3 assignments issued (cap 3): GlitchMobz Clips Account Lead, Mr Sunshine State QC Agent, Bitstream.fm Poster proposals; 45 proposals today, QC 15/15.",
+      "preview": "Productivity Cycle 15 (2026-10-14 22:55 EDT) completed. Snapshot 22:49:42 EDT: 163/193 idle (84.5%), 6 running, 24 recently active.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity Cycle 15 complete for 2026-10-14 ~22:55 EDT. Snapshot read: 163/193 idle (84.5%), 6 running, 24 recently active. 3 assignments issued (cap 3): GlitchMobz Clips Account Lead, Mr Sunshine State QC Agent, Bitstream.fm Poster proposals; 45 proposals today, QC 15/15.",
+      "preview": "Productivity Cycle 15 (2026-10-14 22:55 EDT) completed. Snapshot 22:49:42 EDT: 163/193 idle (84.5%), 6 running, 24 recently active.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity Cycle 15 complete for 2026-10-14 ~22:55 EDT. Snapshot read: 163/193 idle (84.5%), 6 running, 24 recently active. 3 assignments issued (cap 3): GlitchMobz Clips Account Lead, Mr Sunshine State QC Agent, Bitstream.fm Poster proposals; 45 proposals today, QC 15/15.",
+      "preview": "Productivity Cycle 15 (2026-10-14 22:55 EDT) completed. Snapshot 22:49:42 EDT: 163/193 idle (84.5%), 6 running, 24 recently active.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity Cycle 15 complete for 2026-10-14 ~22:55 EDT. Snapshot read: 163/193 idle (84.5%), 6 running, 24 recently active. 3 assignments issued (cap 3): GlitchMobz Clips Account Lead, Mr Sunshine State QC Agent, Bitstream.fm Poster proposals; 45 proposals today, QC 15/15.",
+      "preview": "Productivity Cycle 15 (2026-10-14 22:55 EDT) completed. Snapshot 22:49:42 EDT: 163/193 idle (84.5%), 6 running, 24 recently active.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792034955724,
+  "scannedAt": 1792035210712,
   "warnings": []
 }
