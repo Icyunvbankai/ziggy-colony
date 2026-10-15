@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity cycle 43 (Thu 2026-10-15 12:55 EDT) completed per TEAM.md. Evidence fresh and verified: local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 2026-10-15T12:49:22 EDT, same generation at selection and verification).",
+      "preview": "Productivity cycle 43 (Thu 2026-10-15 12:55 EDT) completed per TEAM.md.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity cycle 43 (Thu 2026-10-15 12:55 EDT) completed per TEAM.md. Evidence fresh and verified: local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 2026-10-15T12:49:22 EDT, same generation at selection and verification).",
+      "preview": "Productivity cycle 43 (Thu 2026-10-15 12:55 EDT) completed per TEAM.md.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity cycle 43 (Thu 2026-10-15 12:55 EDT) completed per TEAM.md. Evidence fresh and verified: local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 2026-10-15T12:49:22 EDT, same generation at selection and verification).",
+      "preview": "Productivity cycle 43 (Thu 2026-10-15 12:55 EDT) completed per TEAM.md.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity cycle 43 (Thu 2026-10-15 12:55 EDT) completed per TEAM.md. Evidence fresh and verified: local snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (generated 2026-10-15T12:49:22 EDT, same generation at selection and verification).",
+      "preview": "Productivity cycle 43 (Thu 2026-10-15 12:55 EDT) completed per TEAM.md.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792084634703,
+  "scannedAt": 1792085088059,
   "warnings": []
 }
