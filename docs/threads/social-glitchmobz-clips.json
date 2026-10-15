@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-glitchmobz-clips-account-lead",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars), left queued; fallback ad hit HTTP 429, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-content-strategist",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars), left queued; fallback ad hit HTTP 429, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-poster",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars), left queued; fallback ad hit HTTP 429, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-analyst",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars), left queued; fallback ad hit HTTP 429, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-qc-agent",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars), left queued; fallback ad hit HTTP 429, run stopped per rule. 15 clips queued.",
+      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792033720830,
+  "scannedAt": 1792035210712,
   "warnings": []
 }
