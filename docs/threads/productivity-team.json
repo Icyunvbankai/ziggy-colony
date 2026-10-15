@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity cycle 31 completed for 2026-10-15 ~06:55 EDT. Work done: Read local colony snapshot (~/workspace/bot-crossing/data/muse-snapshot.json).",
+      "preview": "Productivity cycle 31 completed for 2026-10-15 ~06:55 EDT; 3 proposals delivered.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity cycle 31 completed for 2026-10-15 ~06:55 EDT. Work done: Read local colony snapshot (~/workspace/bot-crossing/data/muse-snapshot.json).",
+      "preview": "Productivity cycle 31 completed for 2026-10-15 ~06:55 EDT; 3 proposals delivered.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity cycle 31 completed for 2026-10-15 ~06:55 EDT. Work done: Read local colony snapshot (~/workspace/bot-crossing/data/muse-snapshot.json).",
+      "preview": "Productivity cycle 31 completed for 2026-10-15 ~06:55 EDT; 3 proposals delivered.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity cycle 31 completed for 2026-10-15 ~06:55 EDT. Work done: Read local colony snapshot (~/workspace/bot-crossing/data/muse-snapshot.json).",
+      "preview": "Productivity cycle 31 completed for 2026-10-15 ~06:55 EDT; 3 proposals delivered.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792062507426,
+  "scannedAt": 1792062928849,
   "warnings": []
 }
