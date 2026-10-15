@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-mr-sunshine-state-account-lead",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. Posted: 3 ads (ad hour 2026-10-15-08, fallback due to missing clip sidecars), all verified landed: - @glitchmobz_clips — post_id 18102156968638433 - @aceloco — post_id 17960698137247851 - @bitstream.fm — post_id 17912142303550045 Skipped: - @mr_sunshine_state — cap check: 5 own posts in last 2h (cap 3/2h). 15 clips queued.",
+      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-content-strategist",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. Posted: 3 ads (ad hour 2026-10-15-08, fallback due to missing clip sidecars), all verified landed: - @glitchmobz_clips — post_id 18102156968638433 - @aceloco — post_id 17960698137247851 - @bitstream.fm — post_id 17912142303550045 Skipped: - @mr_sunshine_state — cap check: 5 own posts in last 2h (cap 3/2h). 15 clips queued.",
+      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-poster",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. Posted: 3 ads (ad hour 2026-10-15-08, fallback due to missing clip sidecars), all verified landed: - @glitchmobz_clips — post_id 18102156968638433 - @aceloco — post_id 17960698137247851 - @bitstream.fm — post_id 17912142303550045 Skipped: - @mr_sunshine_state — cap check: 5 own posts in last 2h (cap 3/2h). 15 clips queued.",
+      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-analyst",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. Posted: 3 ads (ad hour 2026-10-15-08, fallback due to missing clip sidecars), all verified landed: - @glitchmobz_clips — post_id 18102156968638433 - @aceloco — post_id 17960698137247851 - @bitstream.fm — post_id 17912142303550045 Skipped: - @mr_sunshine_state — cap check: 5 own posts in last 2h (cap 3/2h). 15 clips queued.",
+      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-qc-agent",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. Posted: 3 ads (ad hour 2026-10-15-08, fallback due to missing clip sidecars), all verified landed: - @glitchmobz_clips — post_id 18102156968638433 - @aceloco — post_id 17960698137247851 - @bitstream.fm — post_id 17912142303550045 Skipped: - @mr_sunshine_state — cap check: 5 own posts in last 2h (cap 3/2h). 15 clips queued.",
+      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792070024565,
+  "scannedAt": 1792070324967,
   "warnings": []
 }
