@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-bitstream-fm-account-lead",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 14 clips queued.",
+      "preview": "Alternating-hourly-poster run 2026-10-14 23:07 EDT completed with 0 posts. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-content-strategist",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 14 clips queued.",
+      "preview": "Alternating-hourly-poster run 2026-10-14 23:07 EDT completed with 0 posts. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-poster",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 14 clips queued.",
+      "preview": "Alternating-hourly-poster run 2026-10-14 23:07 EDT completed with 0 posts. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-analyst",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 14 clips queued.",
+      "preview": "Alternating-hourly-poster run 2026-10-14 23:07 EDT completed with 0 posts. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-qc-agent",
-      "preview": "Alternating poster 23:07 ET: 0 posted. @glitchmobz_clips clip turn: all 15 queued clips packaging-rejected (missing .packaged.mp4 sidecars) and left queued; fallback to ad 2026-10-14-22. Ad post attempt hit HTTP 429, run stopped immediately per rule. 14 clips queued.",
+      "preview": "Alternating-hourly-poster run 2026-10-14 23:07 EDT completed with 0 posts. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792035210712,
+  "scannedAt": 1792035793178,
   "warnings": []
 }
