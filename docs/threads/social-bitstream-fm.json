@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-bitstream-fm-account-lead",
-      "preview": "Alternating-hourly-poster 18:07 EDT run complete (exit 0). Posted 1 verified clip to @mr_sunshine_state; 3 accounts 429-throttled; HOLD ad 2026-10-15-17 skipped. 15 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-content-strategist",
-      "preview": "Alternating-hourly-poster 18:07 EDT run complete (exit 0). Posted 1 verified clip to @mr_sunshine_state; 3 accounts 429-throttled; HOLD ad 2026-10-15-17 skipped. 15 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-poster",
-      "preview": "Alternating-hourly-poster 18:07 EDT run complete (exit 0). Posted 1 verified clip to @mr_sunshine_state; 3 accounts 429-throttled; HOLD ad 2026-10-15-17 skipped. 15 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-analyst",
-      "preview": "Alternating-hourly-poster 18:07 EDT run complete (exit 0). Posted 1 verified clip to @mr_sunshine_state; 3 accounts 429-throttled; HOLD ad 2026-10-15-17 skipped. 15 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-qc-agent",
-      "preview": "Alternating-hourly-poster 18:07 EDT run complete (exit 0). Posted 1 verified clip to @mr_sunshine_state; 3 accounts 429-throttled; HOLD ad 2026-10-15-17 skipped. 15 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792103189347,
+  "scannedAt": 1792104848212,
   "warnings": []
 }
