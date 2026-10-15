@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-glitchmobz-clips-account-lead",
-      "preview": "Alternating poster 17:07 EDT run: glitchmobz_clips 429-skipped (daily publish limit); 18 clips queued.",
+      "preview": "Alternating-hourly-poster 17:07 EDT run complete. Ad hour target H-1 = 2026-10-15-16. Exit 0. - Posted: ad 2026-10-15-16 -> @mr_sunshine_state, verified landed, post_id 18201818083378623. 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-content-strategist",
-      "preview": "Alternating poster 17:07 EDT run: glitchmobz_clips 429-skipped (daily publish limit); 18 clips queued.",
+      "preview": "Alternating-hourly-poster 17:07 EDT run complete. Ad hour target H-1 = 2026-10-15-16. Exit 0. - Posted: ad 2026-10-15-16 -> @mr_sunshine_state, verified landed, post_id 18201818083378623. 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-poster",
-      "preview": "Alternating poster 17:07 EDT run: glitchmobz_clips 429-skipped (daily publish limit); 18 clips queued.",
+      "preview": "Alternating-hourly-poster 17:07 EDT run complete. Ad hour target H-1 = 2026-10-15-16. Exit 0. - Posted: ad 2026-10-15-16 -> @mr_sunshine_state, verified landed, post_id 18201818083378623. 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-analyst",
-      "preview": "Alternating poster 17:07 EDT run: glitchmobz_clips 429-skipped (daily publish limit); 18 clips queued.",
+      "preview": "Alternating-hourly-poster 17:07 EDT run complete. Ad hour target H-1 = 2026-10-15-16. Exit 0. - Posted: ad 2026-10-15-16 -> @mr_sunshine_state, verified landed, post_id 18201818083378623. 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-qc-agent",
-      "preview": "Alternating poster 17:07 EDT run: glitchmobz_clips 429-skipped (daily publish limit); 18 clips queued.",
+      "preview": "Alternating-hourly-poster 17:07 EDT run complete. Ad hour target H-1 = 2026-10-15-16. Exit 0. - Posted: ad 2026-10-15-16 -> @mr_sunshine_state, verified landed, post_id 18201818083378623. 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792099183703,
+  "scannedAt": 1792099449208,
   "warnings": []
 }
