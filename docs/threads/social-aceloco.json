@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-aceloco-account-lead",
-      "preview": "Alternating-hourly-poster run 2026-10-15 00:07 ET: 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
+      "preview": "Alternating hourly poster run (Thu 2026-10-15 00:07 ET): 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-content-strategist",
-      "preview": "Alternating-hourly-poster run 2026-10-15 00:07 ET: 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
+      "preview": "Alternating hourly poster run (Thu 2026-10-15 00:07 ET): 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-poster",
-      "preview": "Alternating-hourly-poster run 2026-10-15 00:07 ET: 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
+      "preview": "Alternating hourly poster run (Thu 2026-10-15 00:07 ET): 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-analyst",
-      "preview": "Alternating-hourly-poster run 2026-10-15 00:07 ET: 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
+      "preview": "Alternating hourly poster run (Thu 2026-10-15 00:07 ET): 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-qc-agent",
-      "preview": "Alternating-hourly-poster run 2026-10-15 00:07 ET: 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
+      "preview": "Alternating hourly poster run (Thu 2026-10-15 00:07 ET): 0 posted; HTTP 429 daily publish limit, run stopped. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792037413789,
+  "scannedAt": 1792037627114,
   "warnings": []
 }
