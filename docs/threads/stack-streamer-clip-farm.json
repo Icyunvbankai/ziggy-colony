@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "GlitchMobz hourly ad creative 16:49 EDT run in flight; latest finished 15:49 run completed.",
+      "preview": "GlitchMobz hourly ad 16:49 EDT run completed: Pod shop heavyweight tees, 3 tees = 10% off first order (HOLD: blank-tee image, needs real artwork).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,9 +12,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792057792000,
-      "lastActivityAt": 1792097392000,
+      "lastActivityAt": 1792097697000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "GlitchMobz hourly ad creative 16:49 EDT run in flight; latest finished 15:49 run completed.",
+      "preview": "GlitchMobz hourly ad 16:49 EDT run completed: Pod shop heavyweight tees, 3 tees = 10% off first order (HOLD: blank-tee image, needs real artwork).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,9 +49,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792057792000,
-      "lastActivityAt": 1792097392000,
+      "lastActivityAt": 1792097697000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "GlitchMobz hourly ad creative 16:49 EDT run in flight; latest finished 15:49 run completed.",
+      "preview": "GlitchMobz hourly ad 16:49 EDT run completed: Pod shop heavyweight tees, 3 tees = 10% off first order (HOLD: blank-tee image, needs real artwork).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,9 +86,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792057792000,
-      "lastActivityAt": 1792097392000,
+      "lastActivityAt": 1792097697000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "GlitchMobz hourly ad creative 16:49 EDT run in flight; latest finished 15:49 run completed.",
+      "preview": "GlitchMobz hourly ad 16:49 EDT run completed: Pod shop heavyweight tees, 3 tees = 10% off first order (HOLD: blank-tee image, needs real artwork).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,9 +123,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792057792000,
-      "lastActivityAt": 1792097392000,
+      "lastActivityAt": 1792097697000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792097683264,
+  "scannedAt": 1792098061682,
   "warnings": []
 }
