@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity Cycle 20 completed (2026-10-15 01:25 EDT). Listed 143/193 agents idle (74.1%); issued 3 assignments; collected 3 improvement proposals.",
+      "preview": "Productivity loop cycle 20 completed for 2026-10-15 ~01:25 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity Cycle 20 completed (2026-10-15 01:25 EDT). Listed 143/193 agents idle (74.1%); issued 3 assignments; collected 3 improvement proposals.",
+      "preview": "Productivity loop cycle 20 completed for 2026-10-15 ~01:25 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity Cycle 20 completed (2026-10-15 01:25 EDT). Listed 143/193 agents idle (74.1%); issued 3 assignments; collected 3 improvement proposals.",
+      "preview": "Productivity loop cycle 20 completed for 2026-10-15 ~01:25 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity Cycle 20 completed (2026-10-15 01:25 EDT). Listed 143/193 agents idle (74.1%); issued 3 assignments; collected 3 improvement proposals.",
+      "preview": "Productivity loop cycle 20 completed for 2026-10-15 ~01:25 EDT.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792042496074,
+  "scannedAt": 1792043014304,
   "warnings": []
 }
