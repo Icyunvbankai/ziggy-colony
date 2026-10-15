@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "Hourly ad prepared for slot 18/30: Prompt Pack Bundle — any 3 packs for $20.",
+      "preview": "Hourly ad prepared for slot 18/30: Prompt Pack Bundle — any 3 packs for $20. Creative: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-15-14.jpg (square, QC-checked, verified price text present; exact 1080×1080 pixel dimensions were not independently verified in the verification run).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "Hourly ad prepared for slot 18/30: Prompt Pack Bundle — any 3 packs for $20.",
+      "preview": "Hourly ad prepared for slot 18/30: Prompt Pack Bundle — any 3 packs for $20. Creative: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-15-14.jpg (square, QC-checked, verified price text present; exact 1080×1080 pixel dimensions were not independently verified in the verification run).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "Hourly ad prepared for slot 18/30: Prompt Pack Bundle — any 3 packs for $20.",
+      "preview": "Hourly ad prepared for slot 18/30: Prompt Pack Bundle — any 3 packs for $20. Creative: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-15-14.jpg (square, QC-checked, verified price text present; exact 1080×1080 pixel dimensions were not independently verified in the verification run).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "Hourly ad prepared for slot 18/30: Prompt Pack Bundle — any 3 packs for $20.",
+      "preview": "Hourly ad prepared for slot 18/30: Prompt Pack Bundle — any 3 packs for $20. Creative: ~/workspace/glitchmobz-clips/ads/hourly/2026-10-15-14.jpg (square, QC-checked, verified price text present; exact 1080×1080 pixel dimensions were not independently verified in the verification run).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792090469654,
+  "scannedAt": 1792090884539,
   "warnings": []
 }
