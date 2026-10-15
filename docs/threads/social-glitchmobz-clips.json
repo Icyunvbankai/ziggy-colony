@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-glitchmobz-clips-account-lead",
-      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 18 clips queued.",
+      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 19 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-content-strategist",
-      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 18 clips queued.",
+      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 19 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-poster",
-      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 18 clips queued.",
+      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 19 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-analyst",
-      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 18 clips queued.",
+      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 19 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-qc-agent",
-      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 18 clips queued.",
+      "preview": "Alternating hourly poster run 2026-10-15 13:07 ET (ad hour 2026-10-15-12) completed. Posted: 4 accounts, all ad 2026-10-15-12 as FALLBACK (clips unavailable — 58 PACKAGING-REJECTS across accounts for missing .packaged.mp4 sidecars; clips left queued). 19 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792085088059,
+  "scannedAt": 1792085621236,
   "warnings": []
 }
