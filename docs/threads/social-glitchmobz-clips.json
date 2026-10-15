@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-glitchmobz-clips-account-lead",
-      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 18 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state (post_id 18174059236451401). 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-content-strategist",
-      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 18 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state (post_id 18174059236451401). 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-poster",
-      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 18 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state (post_id 18174059236451401). 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-analyst",
-      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 18 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state (post_id 18174059236451401). 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-qc-agent",
-      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state. 18 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 18:07 ET: run completed (exit 0). Posted 1 verified: clip deen-slap-bit.mp4 -> @mr_sunshine_state (post_id 18174059236451401). 18 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792104848212,
+  "scannedAt": 1792105434799,
   "warnings": []
 }
