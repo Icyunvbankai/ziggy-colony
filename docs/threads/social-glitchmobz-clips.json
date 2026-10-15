@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-glitchmobz-clips-account-lead",
-      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-content-strategist",
-      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-poster",
-      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-analyst",
-      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-qc-agent",
-      "preview": "Alternating poster 09:07 ET: posted 3 ads to @glitchmobz_clips, @aceloco, @bitstream.fm; @mr_sunshine_state skipped on cap; 15 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 09:07 ET. 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792070324967,
+  "scannedAt": 1792070624052,
   "warnings": []
 }
