@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:colony-team-colony-app-lead",
-      "preview": "bot-crossing-sync 15:47 EDT run succeeded.",
+      "preview": "bot-crossing-sync 15:52 EDT run succeeded.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,7 +12,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792054051000,
-      "lastActivityAt": 1792093951000,
+      "lastActivityAt": 1792094251000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:colony-team-app-developer",
-      "preview": "bot-crossing-sync 15:47 EDT run succeeded.",
+      "preview": "bot-crossing-sync 15:52 EDT run succeeded.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,7 +49,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792054051000,
-      "lastActivityAt": 1792093951000,
+      "lastActivityAt": 1792094251000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:colony-team-backend-deploy",
-      "preview": "bot-crossing-sync 15:47 EDT run succeeded.",
+      "preview": "bot-crossing-sync 15:52 EDT run succeeded.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,7 +86,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792054051000,
-      "lastActivityAt": 1792093951000,
+      "lastActivityAt": 1792094251000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:colony-team-designer",
-      "preview": "bot-crossing-sync 15:47 EDT run succeeded.",
+      "preview": "bot-crossing-sync 15:52 EDT run succeeded.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,7 +123,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792054051000,
-      "lastActivityAt": 1792093951000,
+      "lastActivityAt": 1792094251000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:colony-team-qa-verifier",
-      "preview": "bot-crossing-sync 15:47 EDT run succeeded.",
+      "preview": "bot-crossing-sync 15:52 EDT run succeeded.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -160,7 +160,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792054051000,
-      "lastActivityAt": 1792093951000,
+      "lastActivityAt": 1792094251000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -189,7 +189,7 @@
     },
     {
       "id": "muse:agent:colony-team-qc-agent",
-      "preview": "bot-crossing-sync 15:47 EDT run succeeded.",
+      "preview": "bot-crossing-sync 15:52 EDT run succeeded.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -197,7 +197,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792054051000,
-      "lastActivityAt": 1792093951000,
+      "lastActivityAt": 1792094251000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -225,6 +225,6 @@
       }
     }
   ],
-  "scannedAt": 1792094058804,
+  "scannedAt": 1792094326488,
   "warnings": []
 }
