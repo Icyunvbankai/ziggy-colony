@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-bitstream-fm-account-lead",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. Posted 3 ads (glitchmobz, aceloco, bitstream.fm); sunshine skipped on cap; 14 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-content-strategist",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. Posted 3 ads (glitchmobz, aceloco, bitstream.fm); sunshine skipped on cap; 14 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-poster",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. Posted 3 ads (glitchmobz, aceloco, bitstream.fm); sunshine skipped on cap; 14 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-analyst",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. Posted 3 ads (glitchmobz, aceloco, bitstream.fm); sunshine skipped on cap; 14 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-qc-agent",
-      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. Posted 3 ads (glitchmobz, aceloco, bitstream.fm); sunshine skipped on cap; 14 clips queued.",
+      "preview": "Alternating-hourly-poster run completed 2026-10-15 10:07 ET. 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792073725210,
+  "scannedAt": 1792074648818,
   "warnings": []
 }
