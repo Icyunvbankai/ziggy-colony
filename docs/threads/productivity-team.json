@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity-loop cycle 21 completed for scheduled run 2026-10-15 ~01:55 EDT.",
+      "preview": "Completed productivity-loop run (Thu 2026-10-15 03:25:07 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity-loop cycle 21 completed for scheduled run 2026-10-15 ~01:55 EDT.",
+      "preview": "Completed productivity-loop run (Thu 2026-10-15 03:25:07 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity-loop cycle 21 completed for scheduled run 2026-10-15 ~01:55 EDT.",
+      "preview": "Completed productivity-loop run (Thu 2026-10-15 03:25:07 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity-loop cycle 21 completed for scheduled run 2026-10-15 ~01:55 EDT.",
+      "preview": "Completed productivity-loop run (Thu 2026-10-15 03:25:07 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792049308529,
+  "scannedAt": 1792049643239,
   "warnings": []
 }
