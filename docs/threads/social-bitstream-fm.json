@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-bitstream-fm-account-lead",
-      "preview": "alternating-hourly-poster run 2026-10-15 07:07 ET posted ad 2026-10-15-06 to @glitchmobz_clips; skipped others (cap). 14 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 07:07 EDT: posted ad 2026-10-15-06 -> @glitchmobz_clips, post_id 18446359672131276 (verified landed). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-content-strategist",
-      "preview": "alternating-hourly-poster run 2026-10-15 07:07 ET posted ad 2026-10-15-06 to @glitchmobz_clips; skipped others (cap). 14 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 07:07 EDT: posted ad 2026-10-15-06 -> @glitchmobz_clips, post_id 18446359672131276 (verified landed). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-poster",
-      "preview": "alternating-hourly-poster run 2026-10-15 07:07 ET posted ad 2026-10-15-06 to @glitchmobz_clips; skipped others (cap). 14 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 07:07 EDT: posted ad 2026-10-15-06 -> @glitchmobz_clips, post_id 18446359672131276 (verified landed). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-analyst",
-      "preview": "alternating-hourly-poster run 2026-10-15 07:07 ET posted ad 2026-10-15-06 to @glitchmobz_clips; skipped others (cap). 14 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 07:07 EDT: posted ad 2026-10-15-06 -> @glitchmobz_clips, post_id 18446359672131276 (verified landed). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-bitstream-fm-qc-agent",
-      "preview": "alternating-hourly-poster run 2026-10-15 07:07 ET posted ad 2026-10-15-06 to @glitchmobz_clips; skipped others (cap). 14 clips queued.",
+      "preview": "alternating-hourly-poster 2026-10-15 07:07 EDT: posted ad 2026-10-15-06 -> @glitchmobz_clips, post_id 18446359672131276 (verified landed). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792062928849,
+  "scannedAt": 1792063100633,
   "warnings": []
 }
