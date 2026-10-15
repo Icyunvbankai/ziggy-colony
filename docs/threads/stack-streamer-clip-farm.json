@@ -4,14 +4,14 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "11 AM slot — Essential Prompt Pack ad completed and ready for manual posting. Result: One product-forward Instagram ad built for rotation #15 (Essential tier). Price verified against live page: $7.99 for 100 copy-paste prompts (https://icyunvbankai.github.io/Bitstream/prompt-pack",
+      "preview": "11 AM slot — Essential Prompt Pack ad completed and ready for manual posting. Result: One product-forward Instagram ad built for rotation #15 (Essential tier).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1792039792000,
+      "createdAt": 1792043392000,
       "lastActivityAt": 1792079616000,
       "lastFocusedAt": 0,
       "running": false,
@@ -30,7 +30,7 @@
       "agent_id": "stack-streamer-clip-farm-viral-clip-scout",
       "agent_role": "Viral clip scout",
       "tile_index": 0,
-      "sizeBytes": 21500,
+      "sizeBytes": 20000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -41,14 +41,14 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "11 AM slot — Essential Prompt Pack ad completed and ready for manual posting. Result: One product-forward Instagram ad built for rotation #15 (Essential tier). Price verified against live page: $7.99 for 100 copy-paste prompts (https://icyunvbankai.github.io/Bitstream/prompt-pack",
+      "preview": "11 AM slot — Essential Prompt Pack ad completed and ready for manual posting. Result: One product-forward Instagram ad built for rotation #15 (Essential tier).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1792039792000,
+      "createdAt": 1792043392000,
       "lastActivityAt": 1792079616000,
       "lastFocusedAt": 0,
       "running": false,
@@ -67,7 +67,7 @@
       "agent_id": "stack-streamer-clip-farm-short-form-scriptwriter",
       "agent_role": "Short-form scriptwriter",
       "tile_index": 1,
-      "sizeBytes": 21500,
+      "sizeBytes": 20000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -78,14 +78,14 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "11 AM slot — Essential Prompt Pack ad completed and ready for manual posting. Result: One product-forward Instagram ad built for rotation #15 (Essential tier). Price verified against live page: $7.99 for 100 copy-paste prompts (https://icyunvbankai.github.io/Bitstream/prompt-pack",
+      "preview": "11 AM slot — Essential Prompt Pack ad completed and ready for manual posting. Result: One product-forward Instagram ad built for rotation #15 (Essential tier).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1792039792000,
+      "createdAt": 1792043392000,
       "lastActivityAt": 1792079616000,
       "lastFocusedAt": 0,
       "running": false,
@@ -104,7 +104,7 @@
       "agent_id": "stack-streamer-clip-farm-short-form-editor",
       "agent_role": "Ruthless short-form editor",
       "tile_index": 2,
-      "sizeBytes": 21500,
+      "sizeBytes": 20000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -115,14 +115,14 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "11 AM slot — Essential Prompt Pack ad completed and ready for manual posting. Result: One product-forward Instagram ad built for rotation #15 (Essential tier). Price verified against live page: $7.99 for 100 copy-paste prompts (https://icyunvbankai.github.io/Bitstream/prompt-pack",
+      "preview": "11 AM slot — Essential Prompt Pack ad completed and ready for manual posting. Result: One product-forward Instagram ad built for rotation #15 (Essential tier).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1792039792000,
+      "createdAt": 1792043392000,
       "lastActivityAt": 1792079616000,
       "lastFocusedAt": 0,
       "running": false,
@@ -141,7 +141,7 @@
       "agent_id": "stack-streamer-clip-farm-qc-agent",
       "agent_role": "QC agent",
       "tile_index": 3,
-      "sizeBytes": 21500,
+      "sizeBytes": 20000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792080071316,
+  "scannedAt": 1792080255314,
   "warnings": []
 }
