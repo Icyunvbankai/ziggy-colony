@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "productivity-loop cycle 41 completed. Snapshot read (selection gen 11:30:58 EDT): 143 of 193 agents idle (74.1%).",
+      "preview": "productivity-loop cycle 41 completed.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,9 +12,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792041907000,
-      "lastActivityAt": 1792080045000,
+      "lastActivityAt": 1792081507000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "productivity-loop cycle 41 completed. Snapshot read (selection gen 11:30:58 EDT): 143 of 193 agents idle (74.1%).",
+      "preview": "productivity-loop cycle 41 completed.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,9 +49,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792041907000,
-      "lastActivityAt": 1792080045000,
+      "lastActivityAt": 1792081507000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "productivity-loop cycle 41 completed. Snapshot read (selection gen 11:30:58 EDT): 143 of 193 agents idle (74.1%).",
+      "preview": "productivity-loop cycle 41 completed.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,9 +86,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792041907000,
-      "lastActivityAt": 1792080045000,
+      "lastActivityAt": 1792081507000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "productivity-loop cycle 41 completed. Snapshot read (selection gen 11:30:58 EDT): 143 of 193 agents idle (74.1%).",
+      "preview": "productivity-loop cycle 41 completed.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,9 +123,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792041907000,
-      "lastActivityAt": 1792080045000,
+      "lastActivityAt": 1792081507000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792080656387,
+  "scannedAt": 1792081933539,
   "warnings": []
 }
