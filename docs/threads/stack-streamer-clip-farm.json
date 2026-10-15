@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "Hourly ad creative completed for 3 PM ET (Thu 2026-10-15) — item 19/30: ZONA DEIECTUS tees (D7 BUILD SOMETHING design).",
+      "preview": "GlitchMobz hourly ad creative 16:49 EDT run in flight; latest finished 15:49 run completed.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,9 +12,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792057792000,
-      "lastActivityAt": 1792093936000,
+      "lastActivityAt": 1792097392000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "Hourly ad creative completed for 3 PM ET (Thu 2026-10-15) — item 19/30: ZONA DEIECTUS tees (D7 BUILD SOMETHING design).",
+      "preview": "GlitchMobz hourly ad creative 16:49 EDT run in flight; latest finished 15:49 run completed.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,9 +49,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792057792000,
-      "lastActivityAt": 1792093936000,
+      "lastActivityAt": 1792097392000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "Hourly ad creative completed for 3 PM ET (Thu 2026-10-15) — item 19/30: ZONA DEIECTUS tees (D7 BUILD SOMETHING design).",
+      "preview": "GlitchMobz hourly ad creative 16:49 EDT run in flight; latest finished 15:49 run completed.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,9 +86,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792057792000,
-      "lastActivityAt": 1792093936000,
+      "lastActivityAt": 1792097392000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "Hourly ad creative completed for 3 PM ET (Thu 2026-10-15) — item 19/30: ZONA DEIECTUS tees (D7 BUILD SOMETHING design).",
+      "preview": "GlitchMobz hourly ad creative 16:49 EDT run in flight; latest finished 15:49 run completed.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,9 +123,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792057792000,
-      "lastActivityAt": 1792093936000,
+      "lastActivityAt": 1792097392000,
       "lastFocusedAt": 0,
-      "running": false,
+      "running": true,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792095045475,
+  "scannedAt": 1792097683264,
   "warnings": []
 }
