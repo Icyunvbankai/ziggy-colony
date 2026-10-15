@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity loop cycle 36 completed (2026-10-15 ~09:25 EDT). Snapshot: 193 agents, 143 idle (74.1%), 6 running (Colony Team), 44 recently active.",
+      "preview": "Productivity loop cycle 36 completed (2026-10-15 ~09:25 EDT). Snapshot: 193 agents, 143 idle (74.1%), 6 running (Colony Team), 44 recently active. 3 assignments issued and delivered, 0 pre-empted: 1) Streamer Clip Farm V",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity loop cycle 36 completed (2026-10-15 ~09:25 EDT). Snapshot: 193 agents, 143 idle (74.1%), 6 running (Colony Team), 44 recently active.",
+      "preview": "Productivity loop cycle 36 completed (2026-10-15 ~09:25 EDT). Snapshot: 193 agents, 143 idle (74.1%), 6 running (Colony Team), 44 recently active. 3 assignments issued and delivered, 0 pre-empted: 1) Streamer Clip Farm V",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity loop cycle 36 completed (2026-10-15 ~09:25 EDT). Snapshot: 193 agents, 143 idle (74.1%), 6 running (Colony Team), 44 recently active.",
+      "preview": "Productivity loop cycle 36 completed (2026-10-15 ~09:25 EDT). Snapshot: 193 agents, 143 idle (74.1%), 6 running (Colony Team), 44 recently active. 3 assignments issued and delivered, 0 pre-empted: 1) Streamer Clip Farm V",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity loop cycle 36 completed (2026-10-15 ~09:25 EDT). Snapshot: 193 agents, 143 idle (74.1%), 6 running (Colony Team), 44 recently active.",
+      "preview": "Productivity loop cycle 36 completed (2026-10-15 ~09:25 EDT). Snapshot: 193 agents, 143 idle (74.1%), 6 running (Colony Team), 44 recently active. 3 assignments issued and delivered, 0 pre-empted: 1) Streamer Clip Farm V",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792071290110,
+  "scannedAt": 1792072508854,
   "warnings": []
 }
