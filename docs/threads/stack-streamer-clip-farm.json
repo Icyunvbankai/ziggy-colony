@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "Hourly ad for @glitchmobz_clips completed for rotation slot 10/30: Wonderskin Wonder Blading Lip Stain, about $18 (verified against live Bitstream store page).",
+      "preview": "Hourly ad for @glitchmobz_clips completed for rotation slot 10/30: Wonderskin Wonder Blading Lip Stain, about $18.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "Hourly ad for @glitchmobz_clips completed for rotation slot 10/30: Wonderskin Wonder Blading Lip Stain, about $18 (verified against live Bitstream store page).",
+      "preview": "Hourly ad for @glitchmobz_clips completed for rotation slot 10/30: Wonderskin Wonder Blading Lip Stain, about $18.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "Hourly ad for @glitchmobz_clips completed for rotation slot 10/30: Wonderskin Wonder Blading Lip Stain, about $18 (verified against live Bitstream store page).",
+      "preview": "Hourly ad for @glitchmobz_clips completed for rotation slot 10/30: Wonderskin Wonder Blading Lip Stain, about $18.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "Hourly ad for @glitchmobz_clips completed for rotation slot 10/30: Wonderskin Wonder Blading Lip Stain, about $18 (verified against live Bitstream store page).",
+      "preview": "Hourly ad for @glitchmobz_clips completed for rotation slot 10/30: Wonderskin Wonder Blading Lip Stain, about $18.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792061721998,
+  "scannedAt": 1792061982166,
   "warnings": []
 }
