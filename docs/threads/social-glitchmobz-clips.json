@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-glitchmobz-clips-account-lead",
-      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 17 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 16 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,7 +12,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792145220000,
-      "lastActivityAt": 1792159620000,
+      "lastActivityAt": 1792159711000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-content-strategist",
-      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 17 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 16 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,7 +49,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792145220000,
-      "lastActivityAt": 1792159620000,
+      "lastActivityAt": 1792159711000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-poster",
-      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 17 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 16 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,7 +86,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792145220000,
-      "lastActivityAt": 1792159620000,
+      "lastActivityAt": 1792159711000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-analyst",
-      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 17 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 16 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,7 +123,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792145220000,
-      "lastActivityAt": 1792159620000,
+      "lastActivityAt": 1792159711000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-qc-agent",
-      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 17 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Fri 2026-10-16 09:07:00 EDT). 16 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -160,7 +160,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792145220000,
-      "lastActivityAt": 1792159620000,
+      "lastActivityAt": 1792159711000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792159668826,
+  "scannedAt": 1792159964998,
   "warnings": []
 }
