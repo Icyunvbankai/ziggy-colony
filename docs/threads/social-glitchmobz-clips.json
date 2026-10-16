@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-glitchmobz-clips-account-lead",
-      "preview": "Alternating poster 03:07: 0 posts published; 18 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 17 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-content-strategist",
-      "preview": "Alternating poster 03:07: 0 posts published; 18 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 17 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-poster",
-      "preview": "Alternating poster 03:07: 0 posts published; 18 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 17 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-analyst",
-      "preview": "Alternating poster 03:07: 0 posts published; 18 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 17 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-glitchmobz-clips-qc-agent",
-      "preview": "Alternating poster 03:07: 0 posts published; 18 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 17 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792138068218,
+  "scannedAt": 1792138367450,
   "warnings": []
 }
