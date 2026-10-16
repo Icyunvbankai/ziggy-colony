@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:stack-streamer-clip-farm-viral-clip-scout",
-      "preview": "Hourly ad run completed for @glitchmobz_clips. Built and verified a product-forward creative for Goldshell AE BOX II at from $234 (comparison angle: lowest-priced miner on the shelf vs AL BOX III from $894, KA BOX PRO from $354).",
+      "preview": "Hourly ad built for @glitchmobz_clips — item 10/32: Wonderskin Wonder Blading Lip Stain, about $18.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,9 +12,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792160580000,
-      "lastActivityAt": 1792176592000,
+      "lastActivityAt": 1792176802000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -30,7 +30,7 @@
       "agent_id": "stack-streamer-clip-farm-viral-clip-scout",
       "agent_role": "Viral clip scout",
       "tile_index": 0,
-      "sizeBytes": 9500,
+      "sizeBytes": 11000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-scriptwriter",
-      "preview": "Hourly ad run completed for @glitchmobz_clips. Built and verified a product-forward creative for Goldshell AE BOX II at from $234 (comparison angle: lowest-priced miner on the shelf vs AL BOX III from $894, KA BOX PRO from $354).",
+      "preview": "Hourly ad built for @glitchmobz_clips — item 10/32: Wonderskin Wonder Blading Lip Stain, about $18.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,9 +49,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792160580000,
-      "lastActivityAt": 1792176592000,
+      "lastActivityAt": 1792176802000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -67,7 +67,7 @@
       "agent_id": "stack-streamer-clip-farm-short-form-scriptwriter",
       "agent_role": "Short-form scriptwriter",
       "tile_index": 1,
-      "sizeBytes": 9500,
+      "sizeBytes": 11000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-short-form-editor",
-      "preview": "Hourly ad run completed for @glitchmobz_clips. Built and verified a product-forward creative for Goldshell AE BOX II at from $234 (comparison angle: lowest-priced miner on the shelf vs AL BOX III from $894, KA BOX PRO from $354).",
+      "preview": "Hourly ad built for @glitchmobz_clips — item 10/32: Wonderskin Wonder Blading Lip Stain, about $18.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,9 +86,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792160580000,
-      "lastActivityAt": 1792176592000,
+      "lastActivityAt": 1792176802000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -104,7 +104,7 @@
       "agent_id": "stack-streamer-clip-farm-short-form-editor",
       "agent_role": "Ruthless short-form editor",
       "tile_index": 2,
-      "sizeBytes": 9500,
+      "sizeBytes": 11000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:stack-streamer-clip-farm-qc-agent",
-      "preview": "Hourly ad run completed for @glitchmobz_clips. Built and verified a product-forward creative for Goldshell AE BOX II at from $234 (comparison angle: lowest-priced miner on the shelf vs AL BOX III from $894, KA BOX PRO from $354).",
+      "preview": "Hourly ad built for @glitchmobz_clips — item 10/32: Wonderskin Wonder Blading Lip Stain, about $18.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,9 +123,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792160580000,
-      "lastActivityAt": 1792176592000,
+      "lastActivityAt": 1792176802000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -141,7 +141,7 @@
       "agent_id": "stack-streamer-clip-farm-qc-agent",
       "agent_role": "QC agent",
       "tile_index": 3,
-      "sizeBytes": 9500,
+      "sizeBytes": 11000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792176766704,
+  "scannedAt": 1792177068056,
   "warnings": []
 }
