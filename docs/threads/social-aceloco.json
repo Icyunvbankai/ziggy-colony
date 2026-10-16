@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-aceloco-account-lead",
-      "preview": "Alternating poster 03:07: 0 posts published; 16 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-content-strategist",
-      "preview": "Alternating poster 03:07: 0 posts published; 16 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-poster",
-      "preview": "Alternating poster 03:07: 0 posts published; 16 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-analyst",
-      "preview": "Alternating poster 03:07: 0 posts published; 16 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-qc-agent",
-      "preview": "Alternating poster 03:07: 0 posts published; 16 clips queued.",
+      "preview": "Alternating poster 03:07: 0 posts published; 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792138068218,
+  "scannedAt": 1792138367450,
   "warnings": []
 }
