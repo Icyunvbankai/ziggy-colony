@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:productivity-team-productivity-agent-lead",
-      "preview": "Productivity cycle 178 completed successfully. Snapshot read (138/193 idle; 12 timed-idle + 126 null-activity).",
+      "preview": "Productivity Cycle 179 completed for scheduled run Sun 2026-10-18 08:55:07 EDT. Work performed per TEAM.md: - Read local colony snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (gen 08:52:43 EDT; age ~2 min at read).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,9 +12,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792313798000,
-      "lastActivityAt": 1792328238000,
+      "lastActivityAt": 1792328256000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -30,7 +30,7 @@
       "agent_id": "productivity-team-productivity-agent-lead",
       "agent_role": "Productivity Agent (Lead)",
       "tile_index": 0,
-      "sizeBytes": 14000,
+      "sizeBytes": 15500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:productivity-team-task-assigner",
-      "preview": "Productivity cycle 178 completed successfully. Snapshot read (138/193 idle; 12 timed-idle + 126 null-activity).",
+      "preview": "Productivity Cycle 179 completed for scheduled run Sun 2026-10-18 08:55:07 EDT. Work performed per TEAM.md: - Read local colony snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (gen 08:52:43 EDT; age ~2 min at read).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,9 +49,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792313798000,
-      "lastActivityAt": 1792328238000,
+      "lastActivityAt": 1792328256000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -67,7 +67,7 @@
       "agent_id": "productivity-team-task-assigner",
       "agent_role": "Task Assigner",
       "tile_index": 1,
-      "sizeBytes": 14000,
+      "sizeBytes": 15500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:productivity-team-efficiency-auditor",
-      "preview": "Productivity cycle 178 completed successfully. Snapshot read (138/193 idle; 12 timed-idle + 126 null-activity).",
+      "preview": "Productivity Cycle 179 completed for scheduled run Sun 2026-10-18 08:55:07 EDT. Work performed per TEAM.md: - Read local colony snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (gen 08:52:43 EDT; age ~2 min at read).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,9 +86,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792313798000,
-      "lastActivityAt": 1792328238000,
+      "lastActivityAt": 1792328256000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -104,7 +104,7 @@
       "agent_id": "productivity-team-efficiency-auditor",
       "agent_role": "Efficiency Auditor",
       "tile_index": 2,
-      "sizeBytes": 14000,
+      "sizeBytes": 15500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:productivity-team-qc-agent",
-      "preview": "Productivity cycle 178 completed successfully. Snapshot read (138/193 idle; 12 timed-idle + 126 null-activity).",
+      "preview": "Productivity Cycle 179 completed for scheduled run Sun 2026-10-18 08:55:07 EDT. Work performed per TEAM.md: - Read local colony snapshot ~/workspace/bot-crossing/data/muse-snapshot.json (gen 08:52:43 EDT; age ~2 min at read).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,9 +123,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792313798000,
-      "lastActivityAt": 1792328238000,
+      "lastActivityAt": 1792328256000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -141,7 +141,7 @@
       "agent_id": "productivity-team-qc-agent",
       "agent_role": "QC agent",
       "tile_index": 3,
-      "sizeBytes": 14000,
+      "sizeBytes": 15500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792328267444,
+  "scannedAt": 1792328655475,
   "warnings": []
 }
