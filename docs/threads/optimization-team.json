@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:optimization-team-optimization-agent",
-      "preview": "Optimization proactive sweep 2026-10-18 11:59 ET completed with no posting issue. Posting HEALTHY: latest poster run 11:07 ET: 0-post by design (off-window hour 11; windows 7/10/13/16/19/22, 0 API calls).",
+      "preview": "Optimization 15-min sweep completed (12:14 ET). POSTING-AFFECTING FINDING verified: 10:07 ET poster window was partial 3/4 — glitchmobz_clips skipped by cap check claiming \"3 own posts in last 2h\".",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,9 +12,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792325748000,
-      "lastActivityAt": 1792340055000,
+      "lastActivityAt": 1792340490000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -30,7 +30,7 @@
       "agent_id": "optimization-team-optimization-agent",
       "agent_role": "Optimization Agent",
       "tile_index": 0,
-      "sizeBytes": 27500,
+      "sizeBytes": 29000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:optimization-team-tool-scout",
-      "preview": "Optimization proactive sweep 2026-10-18 11:59 ET completed with no posting issue. Posting HEALTHY: latest poster run 11:07 ET: 0-post by design (off-window hour 11; windows 7/10/13/16/19/22, 0 API calls).",
+      "preview": "Optimization 15-min sweep completed (12:14 ET). POSTING-AFFECTING FINDING verified: 10:07 ET poster window was partial 3/4 — glitchmobz_clips skipped by cap check claiming \"3 own posts in last 2h\".",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,9 +49,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792325748000,
-      "lastActivityAt": 1792340055000,
+      "lastActivityAt": 1792340490000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -67,7 +67,7 @@
       "agent_id": "optimization-team-tool-scout",
       "agent_role": "Tool Scout",
       "tile_index": 1,
-      "sizeBytes": 27500,
+      "sizeBytes": 29000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:optimization-team-evaluator-tester",
-      "preview": "Optimization proactive sweep 2026-10-18 11:59 ET completed with no posting issue. Posting HEALTHY: latest poster run 11:07 ET: 0-post by design (off-window hour 11; windows 7/10/13/16/19/22, 0 API calls).",
+      "preview": "Optimization 15-min sweep completed (12:14 ET). POSTING-AFFECTING FINDING verified: 10:07 ET poster window was partial 3/4 — glitchmobz_clips skipped by cap check claiming \"3 own posts in last 2h\".",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,9 +86,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792325748000,
-      "lastActivityAt": 1792340055000,
+      "lastActivityAt": 1792340490000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -104,7 +104,7 @@
       "agent_id": "optimization-team-evaluator-tester",
       "agent_role": "Evaluator / Tester",
       "tile_index": 2,
-      "sizeBytes": 27500,
+      "sizeBytes": 29000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:optimization-team-integrator",
-      "preview": "Optimization proactive sweep 2026-10-18 11:59 ET completed with no posting issue. Posting HEALTHY: latest poster run 11:07 ET: 0-post by design (off-window hour 11; windows 7/10/13/16/19/22, 0 API calls).",
+      "preview": "Optimization 15-min sweep completed (12:14 ET). POSTING-AFFECTING FINDING verified: 10:07 ET poster window was partial 3/4 — glitchmobz_clips skipped by cap check claiming \"3 own posts in last 2h\".",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,9 +123,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792325748000,
-      "lastActivityAt": 1792340055000,
+      "lastActivityAt": 1792340490000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -141,7 +141,7 @@
       "agent_id": "optimization-team-integrator",
       "agent_role": "Integrator",
       "tile_index": 3,
-      "sizeBytes": 27500,
+      "sizeBytes": 29000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:optimization-team-update-watcher",
-      "preview": "Optimization proactive sweep 2026-10-18 11:59 ET completed with no posting issue. Posting HEALTHY: latest poster run 11:07 ET: 0-post by design (off-window hour 11; windows 7/10/13/16/19/22, 0 API calls).",
+      "preview": "Optimization 15-min sweep completed (12:14 ET). POSTING-AFFECTING FINDING verified: 10:07 ET poster window was partial 3/4 — glitchmobz_clips skipped by cap check claiming \"3 own posts in last 2h\".",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -160,9 +160,9 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792325748000,
-      "lastActivityAt": 1792340055000,
+      "lastActivityAt": 1792340490000,
       "lastFocusedAt": 0,
-      "running": true,
+      "running": false,
       "unread": false,
       "hasError": false,
       "starred": false,
@@ -178,7 +178,7 @@
       "agent_id": "optimization-team-update-watcher",
       "agent_role": "Update Watcher",
       "tile_index": 4,
-      "sizeBytes": 27500,
+      "sizeBytes": 29000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792340285714,
+  "scannedAt": 1792340576496,
   "warnings": []
 }
