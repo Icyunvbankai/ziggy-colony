@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-aceloco-account-lead",
-      "preview": "Scheduled 2026-10-18 19:07 ET alternating-hourly-poster completed (live run, exit 0). 14 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Sun 2026-10-18 20:07:00 EDT). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,7 +12,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792350420000,
-      "lastActivityAt": 1792365385000,
+      "lastActivityAt": 1792368457000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -30,7 +30,7 @@
       "agent_id": "social-aceloco-account-lead",
       "agent_role": "Account Lead",
       "tile_index": 0,
-      "sizeBytes": 9500,
+      "sizeBytes": 11000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-content-strategist",
-      "preview": "Scheduled 2026-10-18 19:07 ET alternating-hourly-poster completed (live run, exit 0). 14 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Sun 2026-10-18 20:07:00 EDT). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,7 +49,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792350420000,
-      "lastActivityAt": 1792365385000,
+      "lastActivityAt": 1792368457000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -67,7 +67,7 @@
       "agent_id": "social-aceloco-content-strategist",
       "agent_role": "Content Strategist",
       "tile_index": 1,
-      "sizeBytes": 9500,
+      "sizeBytes": 11000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-poster",
-      "preview": "Scheduled 2026-10-18 19:07 ET alternating-hourly-poster completed (live run, exit 0). 14 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Sun 2026-10-18 20:07:00 EDT). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,7 +86,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792350420000,
-      "lastActivityAt": 1792365385000,
+      "lastActivityAt": 1792368457000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -104,7 +104,7 @@
       "agent_id": "social-aceloco-poster",
       "agent_role": "Poster",
       "tile_index": 2,
-      "sizeBytes": 9500,
+      "sizeBytes": 11000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-analyst",
-      "preview": "Scheduled 2026-10-18 19:07 ET alternating-hourly-poster completed (live run, exit 0). 14 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Sun 2026-10-18 20:07:00 EDT). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,7 +123,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792350420000,
-      "lastActivityAt": 1792365385000,
+      "lastActivityAt": 1792368457000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -141,7 +141,7 @@
       "agent_id": "social-aceloco-analyst",
       "agent_role": "Analyst",
       "tile_index": 3,
-      "sizeBytes": 9500,
+      "sizeBytes": 11000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-aceloco-qc-agent",
-      "preview": "Scheduled 2026-10-18 19:07 ET alternating-hourly-poster completed (live run, exit 0). 14 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Sun 2026-10-18 20:07:00 EDT). 14 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -160,7 +160,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792350420000,
-      "lastActivityAt": 1792365385000,
+      "lastActivityAt": 1792368457000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -178,7 +178,7 @@
       "agent_id": "social-aceloco-qc-agent",
       "agent_role": "QC Agent",
       "tile_index": 4,
-      "sizeBytes": 9500,
+      "sizeBytes": 11000,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792365496110,
+  "scannedAt": 1792368568437,
   "warnings": []
 }
