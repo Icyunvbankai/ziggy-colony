@@ -11,8 +11,8 @@
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1792481279301,
-      "lastActivityAt": 1792135682485,
+      "createdAt": 1792481569605,
+      "lastActivityAt": 1792135973065,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -40,6 +40,6 @@
       }
     }
   ],
-  "scannedAt": 1792481282485,
+  "scannedAt": 1792481573065,
   "warnings": []
 }
