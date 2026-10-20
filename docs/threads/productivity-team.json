@@ -12,7 +12,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792484707000,
-      "lastActivityAt": 1792506307000,
+      "lastActivityAt": 1792506848000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -49,7 +49,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792484707000,
-      "lastActivityAt": 1792506307000,
+      "lastActivityAt": 1792506848000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -86,7 +86,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792484707000,
-      "lastActivityAt": 1792506307000,
+      "lastActivityAt": 1792506848000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -123,7 +123,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792484707000,
-      "lastActivityAt": 1792506307000,
+      "lastActivityAt": 1792506848000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -151,6 +151,6 @@
       }
     }
   ],
-  "scannedAt": 1792506575842,
+  "scannedAt": 1792506976250,
   "warnings": []
 }
