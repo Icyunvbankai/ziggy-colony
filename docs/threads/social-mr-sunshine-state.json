@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:social-mr-sunshine-state-account-lead",
-      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 01:07:00 EDT). 15 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 02:07:00 EDT). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,7 +12,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792454820000,
-      "lastActivityAt": 1792472839000,
+      "lastActivityAt": 1792476432000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -30,7 +30,7 @@
       "agent_id": "social-mr-sunshine-state-account-lead",
       "agent_role": "Account Lead",
       "tile_index": 0,
-      "sizeBytes": 11000,
+      "sizeBytes": 12500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-content-strategist",
-      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 01:07:00 EDT). 15 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 02:07:00 EDT). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,7 +49,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792454820000,
-      "lastActivityAt": 1792472839000,
+      "lastActivityAt": 1792476432000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -67,7 +67,7 @@
       "agent_id": "social-mr-sunshine-state-content-strategist",
       "agent_role": "Content Strategist",
       "tile_index": 1,
-      "sizeBytes": 11000,
+      "sizeBytes": 12500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-poster",
-      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 01:07:00 EDT). 15 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 02:07:00 EDT). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,7 +86,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792454820000,
-      "lastActivityAt": 1792472839000,
+      "lastActivityAt": 1792476432000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -104,7 +104,7 @@
       "agent_id": "social-mr-sunshine-state-poster",
       "agent_role": "Poster",
       "tile_index": 2,
-      "sizeBytes": 11000,
+      "sizeBytes": 12500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-analyst",
-      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 01:07:00 EDT). 15 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 02:07:00 EDT). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,7 +123,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792454820000,
-      "lastActivityAt": 1792472839000,
+      "lastActivityAt": 1792476432000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -141,7 +141,7 @@
       "agent_id": "social-mr-sunshine-state-analyst",
       "agent_role": "Analyst",
       "tile_index": 3,
-      "sizeBytes": 11000,
+      "sizeBytes": 12500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:social-mr-sunshine-state-qc-agent",
-      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 01:07:00 EDT). 15 clips queued.",
+      "preview": "Completed alternating-hourly-poster run (Tue 2026-10-20 02:07:00 EDT). 15 clips queued.",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -160,7 +160,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792454820000,
-      "lastActivityAt": 1792472839000,
+      "lastActivityAt": 1792476432000,
       "lastFocusedAt": 0,
       "running": false,
       "unread": false,
@@ -178,7 +178,7 @@
       "agent_id": "social-mr-sunshine-state-qc-agent",
       "agent_role": "QC Agent",
       "tile_index": 4,
-      "sizeBytes": 11000,
+      "sizeBytes": 12500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1792476181692,
+  "scannedAt": 1792477077197,
   "warnings": []
 }
