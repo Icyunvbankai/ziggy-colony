@@ -4,7 +4,7 @@
   "agents": [
     {
       "id": "muse:agent:colony-team-colony-app-lead",
-      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:22:31 EDT).",
+      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:27:31 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -12,7 +12,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792634851000,
-      "lastActivityAt": 1792661251000,
+      "lastActivityAt": 1792661551000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -41,7 +41,7 @@
     },
     {
       "id": "muse:agent:colony-team-app-developer",
-      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:22:31 EDT).",
+      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:27:31 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -49,7 +49,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792634851000,
-      "lastActivityAt": 1792661251000,
+      "lastActivityAt": 1792661551000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -78,7 +78,7 @@
     },
     {
       "id": "muse:agent:colony-team-backend-deploy",
-      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:22:31 EDT).",
+      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:27:31 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -86,7 +86,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792634851000,
-      "lastActivityAt": 1792661251000,
+      "lastActivityAt": 1792661551000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -115,7 +115,7 @@
     },
     {
       "id": "muse:agent:colony-team-designer",
-      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:22:31 EDT).",
+      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:27:31 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -123,7 +123,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792634851000,
-      "lastActivityAt": 1792661251000,
+      "lastActivityAt": 1792661551000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -152,7 +152,7 @@
     },
     {
       "id": "muse:agent:colony-team-qa-verifier",
-      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:22:31 EDT).",
+      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:27:31 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -160,7 +160,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792634851000,
-      "lastActivityAt": 1792661251000,
+      "lastActivityAt": 1792661551000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -189,7 +189,7 @@
     },
     {
       "id": "muse:agent:colony-team-qc-agent",
-      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:22:31 EDT).",
+      "preview": "Completed bot-crossing-sync run (Thu 2026-10-22 05:27:31 EDT).",
       "projectPath": "",
       "worktree": "",
       "cwd": "",
@@ -197,7 +197,7 @@
       "model": "Muse Spark",
       "effort": "",
       "createdAt": 1792634851000,
-      "lastActivityAt": 1792661251000,
+      "lastActivityAt": 1792661551000,
       "lastFocusedAt": 0,
       "running": true,
       "unread": false,
@@ -225,6 +225,6 @@
       }
     }
   ],
-  "scannedAt": 1792661272550,
+  "scannedAt": 1792661610747,
   "warnings": []
 }
