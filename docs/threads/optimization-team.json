@@ -11,7 +11,7 @@
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1793176155000,
+      "createdAt": 1793177055000,
       "lastActivityAt": 1793200566000,
       "lastFocusedAt": 0,
       "running": false,
@@ -30,7 +30,7 @@
       "agent_id": "optimization-team-optimization-agent",
       "agent_role": "Optimization Agent",
       "tile_index": 0,
-      "sizeBytes": 44000,
+      "sizeBytes": 42500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -48,7 +48,7 @@
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1793176155000,
+      "createdAt": 1793177055000,
       "lastActivityAt": 1793200566000,
       "lastFocusedAt": 0,
       "running": false,
@@ -67,7 +67,7 @@
       "agent_id": "optimization-team-tool-scout",
       "agent_role": "Tool Scout",
       "tile_index": 1,
-      "sizeBytes": 44000,
+      "sizeBytes": 42500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -85,7 +85,7 @@
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1793176155000,
+      "createdAt": 1793177055000,
       "lastActivityAt": 1793200566000,
       "lastFocusedAt": 0,
       "running": false,
@@ -104,7 +104,7 @@
       "agent_id": "optimization-team-evaluator-tester",
       "agent_role": "Evaluator / Tester",
       "tile_index": 2,
-      "sizeBytes": 44000,
+      "sizeBytes": 42500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -122,7 +122,7 @@
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1793176155000,
+      "createdAt": 1793177055000,
       "lastActivityAt": 1793200566000,
       "lastFocusedAt": 0,
       "running": false,
@@ -141,7 +141,7 @@
       "agent_id": "optimization-team-integrator",
       "agent_role": "Integrator",
       "tile_index": 3,
-      "sizeBytes": 44000,
+      "sizeBytes": 42500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -159,7 +159,7 @@
       "gitBranch": "",
       "model": "Muse Spark",
       "effort": "",
-      "createdAt": 1793176155000,
+      "createdAt": 1793177055000,
       "lastActivityAt": 1793200566000,
       "lastFocusedAt": 0,
       "running": false,
@@ -178,7 +178,7 @@
       "agent_id": "optimization-team-update-watcher",
       "agent_role": "Update Watcher",
       "tile_index": 4,
-      "sizeBytes": 44000,
+      "sizeBytes": 42500,
       "source": "agent",
       "ref": {
         "kind": "agent",
@@ -188,6 +188,6 @@
       }
     }
   ],
-  "scannedAt": 1793200675306,
+  "scannedAt": 1793200973555,
   "warnings": []
 }
